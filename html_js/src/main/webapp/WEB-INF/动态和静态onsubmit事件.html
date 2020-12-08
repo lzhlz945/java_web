@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        function onsubmitFun() {
+            alert("静态submit提交了！")
+            return false;
+        }
+
+        window.onload=function (ev) {
+           var submit= document.getElementById("sub1");
+           submit.onsubmit=function (ev1) {
+            alert("动态submit提交了！")
+            return true;
+           }
+        }
+    </script>
+</head>
+<body>
+
+   <form action="http://localhost:8080" method="get" onsubmit="return onsubmitFun();">
+         <button type="submit">按钮1</button>
+   </form>
+
+   <form id="sub1" action="http://localhost:8080" method="post" >
+         <button type="submit">按钮2</button>
+   </form>
+
+</body>
+</html>
