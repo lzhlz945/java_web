@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function fun1() {
+            alert("静态获取onclick事件！")
+        }
+        window.onload=function () {
+
+            var but=document.getElementById("button1");
+            // alert(but)
+            but.onclick=function () {
+                alert("动态获取onclick事件！")
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+   <div align="center">
+       静态获取onclick()事件
+       <hr/>
+       <br/>
+       <br/>
+       <br/>
+       <button onclick="fun1();">静态获取</button><br/>
+       <br/>
+       <br/>
+       <button id="button1">动态获取</button>
+
+
+   </div>
+</body>
+</html>
