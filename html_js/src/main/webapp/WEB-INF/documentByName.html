@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+    /*    window.onload=function (ev) {
+          var ckb=document.getElementsByName("ck");
+
+        }*/
+        var ckb=document.getElementsByName("ck");
+        function b1() {
+            //全选
+            for (var i = 0; i < ckb.length; i++) {
+                ckb[i].checked=true;
+            }
+            // alert(1);
+        }
+
+        function b2() {
+            for (var i = 0; i < ckb.length; i++) {
+                ckb[i].checked=false;
+            }
+            // alert(2);
+        }
+        function b3() {
+            for (var i = 0; i < ckb.length; i++) {
+                if(ckb[i].checked==false){
+                    ckb[i].checked=true;
+                }else if(ckb[i].checked==true) {
+                     ckb[i].checked=false;
+                }
+            }
+            // alert(3);
+        }
+
+
+    </script>
+</head>
+<body>
+
+  <div align="center">
+      <br/><br/><br/><br/>
+      兴趣爱好：<input type="checkbox" name="ck" value="lq">篮球
+      <input type="checkbox" name="ck" value="ppq">乒乓球
+      <input type="checkbox" name="ck" value="zq">足球
+
+  </div>
+    <div align="center">
+        <button onclick="b1();">全选</button>
+        <button onclick="b2();">全不选</button>
+        <button onclick="b3();">反选</button>
+    </div>
+
+</body>
+</html>
