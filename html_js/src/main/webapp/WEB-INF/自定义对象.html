@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+       //new一个空的对象
+       var obj1=new Object();
+        obj1.name="星儿";
+        obj1.age="27";
+
+        obj1.fun=function () {
+            alert("姓名："+this.name+"  年龄:"+this.age);
+        }
+       //第二种 大括号
+       var obj={
+           name:"狼崽",
+           age:"30",
+           lover:"星儿",
+           fun:function () {
+               alert("姓名："+this.name+"  年龄:"+this.age)
+           }
+       }
+        alert(obj.name)
+        alert(obj.age)
+        alert(obj.fun())
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
