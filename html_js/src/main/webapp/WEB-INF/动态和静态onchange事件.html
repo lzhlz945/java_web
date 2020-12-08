@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #s1{
+            background: chartreuse;
+            height: 40px;
+            width: 105px;
+        }
+        #s2{
+            height: 40px;
+            width: 105px;
+        }
+    </style>
+    <script type="text/javascript">
+         function onchangeFun() {
+             alert("静态onchange事件！！")
+         }
+
+         window.onload=function () {
+             var change=document.getElementById("s1");
+             change.onchange=function () {
+
+             alert("动态onchange事件！！")
+             }
+         }
+    </script>
+</head>
+<body>
+
+  <div align="center">
+
+      <select id="s2" onchange="onchangeFun();">
+          <option selected="selected">--歌曲名--</option>
+          <option>死了都要爱</option>
+          <option>对立面</option>
+          <option>珊瑚海</option>
+      </select>
+
+      <select id="s1">
+          <option selected="selected">--歌手--</option>
+          <option>--周杰伦--</option>
+          <option>--小哥--</option>
+          <option>--张学友--</option>
+      </select>
+
+
+
+  </div>
+</body>
+</html>
