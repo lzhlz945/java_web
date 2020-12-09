@@ -39,6 +39,7 @@
          $("#button2").click(function () {
              alert("标签选择器被点击了！")
 
+            $("ul li:gt(2)").css("background-color","#ff5f87");
          })
 
         })
@@ -54,6 +55,14 @@
     <button id="button1">id按钮</button>
     <br/><br/><br/><br/>
     <button id="button2">标签名按钮</button>
+    <br/>
+    <ul >
+        <li>zs</li>
+        <li>ls</li>
+        <li>zl</li>
+        <li>ww</li>
+        <li>cq</li>
+    </ul>
 
 
 </div>
