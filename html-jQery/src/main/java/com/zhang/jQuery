@@ -1,0 +1,5 @@
+jQuery:
+      jQuery对象是dom对象的数组+jQuery提供的一系列功能函数；
+      jQuery对象和dom对象的方法不能互用，可以转换；
+      jQuery--->dom $(dom)[下标]
+      dom--->jquery $(dom)
