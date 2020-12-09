@@ -28,14 +28,15 @@
 
          $("#button1").click(function () {
              alert("id选择器被点击了！")
+             $(this).hide();
 
          })
-
+            $("#button1").css("background-color","#ffaabb");
          $(".button").click(function () {
              alert("class选择器被点击了！")
 
          })
-         $("button").click(function () {
+         $("#button2").click(function () {
              alert("标签选择器被点击了！")
 
          })
