@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style type="text/css">
+
+        .button,#button1,#button2 {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+     </style>
 <script type="text/javascript" src="../jQuery/jquery-1.7.2.js"></script>
     <script type="text/javascript">
         $(function () {//相当于windows.onload=function(ev){};
@@ -13,6 +26,20 @@
               "</div>"
             ).appendTo("body");
 
+         $("#button1").click(function () {
+             alert("id选择器被点击了！")
+
+         })
+
+         $(".button").click(function () {
+             alert("class选择器被点击了！")
+
+         })
+         $("button").click(function () {
+             alert("标签选择器被点击了！")
+
+         })
+
         })
 
 
@@ -20,6 +47,15 @@
 </head>
 <body>
 
+<div align="center">
+    <button class="button">class按钮</button>
+    <br/><br/><br/><br/>
+    <button id="button1">id按钮</button>
+    <br/><br/><br/><br/>
+    <button id="button2">标签名按钮</button>
+
+
+</div>
 
 </body>
 </html>
