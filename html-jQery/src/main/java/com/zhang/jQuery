@@ -116,7 +116,7 @@ element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素
 	first()
 	last()
 	hasClass(class)
-	filter(expr|obj|ele|fn) 	
+	filter(expr|obj|ele|fn)
 	is(expr|obj|ele|fn)1.6*
 	has(expr|ele)
 	not(expr|ele|fn)
@@ -142,3 +142,28 @@ element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素
 
 
 	*/
+
+7、html|text|val
+     html:
+          获取起始和结束标签之间的内容
+     text:
+          获取起始和结束标签之间的文本
+
+     不传参数，是获取，传递参数是设置
+         alert( $("div").html() );// 获取
+         $("div").html("<h1>我是div中的标题 1</h1>"
+     不传参数，是获取，传递参数是设置
+         alert( $("div").text() ); // 获取
+         $("div").text("<h1>我是div中的标题 1</h1>")
+     不传参数，是获取，传递参数是设置
+
+8、批量单选、多选
+     // 批量操作单选
+     $(":radio").val(["radio2"]);
+     // 批量操作筛选框的选中状态
+     $(":checkbox").val(["checkbox3","checkbox2"]);
+     // 批量操作多选的下拉框选中状态
+     $("#multiple").val(["mul2","mul3","mul4"]);
+     // 操作单选的下拉框选中状态
+     $("#single").val(["sin2"]);
+     一次性：  $("#multiple,#single,:radio,:checkbox").val(["radio2","checkbox1","checkbox3","mul1","mul4","sin3"]);
