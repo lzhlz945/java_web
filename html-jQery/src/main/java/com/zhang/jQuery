@@ -84,7 +84,7 @@ element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素
    $("#one+div")  选择id为one的下一个div标签的元素
    $("#two~div")  选择 id为two 的元素后面的所有 div 兄弟元素
 
-3、基本选择器
+3、基本过滤选择器
    $("div:first")  选择第一个div
    $("div:last")   选择最后一个div
    $("div:not(.one)")  选择div中class全不为one的元素
@@ -96,3 +96,9 @@ element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素
    $(":header") 选择所有的标题元素
    $(":animated") 选择所有正在执行动画的元素
    $("div::not(animated):last")  选择没有执行动画的最后一个div
+
+4、内容过滤器
+   $("div:contains('di')")  div文本中包含di内容的div
+   $("div:empty")  选择不包含子元素(或者文本元素) 的 div 空元素
+   $("div:has(.mini)")   选择含有 class 为 mini 元素的 div 元素
+   $("div:parent")  选择含有子元素(或者文本元素)的div元素
