@@ -17,7 +17,10 @@
             // 操作单选的下拉框选中状态
             $("#single").val(["sin2"]);
 */
-            $("#multiple,#single,:radio,:checkbox").val(["radio2","checkbox1","checkbox3","mul1","mul4","sin3"]);
+           // $("#multiple,#single,:radio,:checkbox").val(["radio2","checkbox1","checkbox3","mul1","mul4","sin3"]);
+            alert($(":checkbox").attr("checked")); //undefined
+
+            alert($(":checkbox").prop("checked")); //false
         });
 
     </script>

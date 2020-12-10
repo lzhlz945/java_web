@@ -167,3 +167,12 @@ element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素
      // 操作单选的下拉框选中状态
      $("#single").val(["sin2"]);
      一次性：  $("#multiple,#single,:radio,:checkbox").val(["radio2","checkbox1","checkbox3","mul1","mul4","sin3"]);
+
+9、attr()和prop()
+
+     attr(): 可以设置和获取属性的值，不推荐使用checked、selected、readOnly、disable等等
+     prop(): 可以设置和获取属性的值，只推荐操作checked、selected、readOnly、disable等等
+
+            alert($(":checkbox").attr("checked")); //undefined
+
+            alert($(":checkbox").prop("checked")); //false
