@@ -186,8 +186,17 @@ element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素
    				this.checked = !this.checked;
    			});
 
-
+11、$("select[name=xx] :selected")、 option 冒号前空一格
+   反选
    $("input[type=button]:eq(0)").click(function(){
    					//$("#single :option:eq(2)").attr("selected", "selected");
    					$("#single").val(["s3"]);
    				});
+
+   下拉框，全部添加到其他下拉框
+   //全部添加到右边
+   			$("button:eq(1)").click(function () {
+   				$("select[name=sel01] option").each(function () {
+   					$(this).appendTo("select[name=sel02]")
+   				})
+   			})

@@ -19,35 +19,34 @@
 	<script type="text/javascript">	
 		$(function(){
 			//选中添加到右边
-			$("button:eq(0)").click(function(){
-				$("select[name=sel01] :selected").each(function(){
-					//alert(this);
-					$(this).appendTo("select[name=sel02]");
-				});
-			});
+			$("button:eq(0)").click(function () {
+				$("select[name=sel01] :selected").each(function(){ //$("select[name=sel01] :selected").each(function(){
+					$(this).appendTo("select[name=sel02]")
+				})
+			})
 			
 			//全部添加到右边
-			$("button:eq(1)").click(function(){
-				$("select[name=sel01] option").each(function(){
-					//alert(this);
-					$(this).appendTo("select[name=sel02]");
-				});
-			});
+
+			$("button:eq(1)").click(function () {
+				$("select[name=sel01] option").each(function () {
+					$(this).appendTo("select[name=sel02]")
+				})
+			})
 			
 			//选中删除到左边
-			$("button:eq(2)").click(function(){
-				$("select[name=sel02] :selected").each(function(){
-					//alert(this);
-					$(this).appendTo("select[name=sel01]");
-				});
-			});
+			$("button:eq(2)").click(function () {
+				$("select[name=sel02] :selected").each(function () {
+					$(this).appendTo("select[name=sel01]")
+				})
+			})
+
 			//全部删除到左边
-			$("button:eq(3)").click(function(){
-				$("select[name=sel02] option").each(function(){
-					//alert(this);
-					$(this).appendTo("select[name=sel01]");
-				});
-			});
+			$("button:eq(3)").click(function () {
+				$("select[name=sel02] option").each(function () {
+					$(this).appendTo("select[name=sel01]")
+				})
+			})
+
 		});
 	
 	</script>
