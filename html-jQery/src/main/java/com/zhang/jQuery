@@ -74,3 +74,12 @@ element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素
 :disabled	$(":disabled")	所有禁用的 input 元素
 :selected	$(":selected")	所有选定的 input 元素
 :checked	$(":checked")	所有选中的 input 元素
+-----------------------------------------------------------------------------------------------------------
+选择器
+1、基本选择器
+
+2、层次选择器
+   $("body div")  选择body中所有div元素
+   $("body > div") 选择body中所有div子元素
+   $("#one+div")  选择id为one的下一个div标签的元素
+   $("#two~div")  选择 id为two 的元素后面的所有 div 兄弟元素
