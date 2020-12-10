@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //静态获取
+        function onblurFun() {
+            console.log("静态获取onClick事件！")
+        }
+
+        //动态获取
+        window.onload=function () {
+            var p=document.getElementById("password");
+            p.onblur=function () {
+            console.log("动态获取onClick事件！")
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+  <div align="center">
+      <br/><br/><br/>
+     用户账号： <input type="text" onblur="onblurFun();"><br/>
+     用户密码： <input type="text" id="password">
+
+  </div>
+
+</body>
+</html>

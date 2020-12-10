@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="html-jQery:war">
+    <output-path>$PROJECT_DIR$/html-jQery/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>html-jQery</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="html-jQery-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="html-jQery:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>逻辑运算</title>
+    <script type="text/javascript">
+        /*
+        * && 且运算
+        *  1、当表达式全为真的时候，返回最后一个表达式的值
+        *  2、当表达式的值有一个为假的时候，返回第一个为假的表达式的值
+        *
+        * || 或运算
+        *  1、当表达式全为假的时候，返回最后一个表达式的值
+        *  2、只有有一个表达式的值为真就，返回它的值
+        *
+        *  短路：|| && 有结果后后面的不会去执行了
+        *
+        *
+        *
+        *
+        *
+        * */
+        var a="abc";
+        var b=true;
+        var c=false;
+        var d=null;
+        /*if(b){
+            alert(true)
+        }else {
+            alert(false)
+        }*/
+        alert(d&&c); //&& 第一个
+        alert(a||b); //|| 全真 返回第一个
+        alert(a && b);//返回b; && 都为真返回最后一个
+        alert(a || c) //返回a; ||  真、假 返回第一个真
+        alert(a && c)//返回c && 真、假返回第一个假
+        alert(d || c) //d 当表达式全为假的时候，返回最后一个表达式的值
+    </script>
+</head>
+<body>
+
+</body>
+</html>
