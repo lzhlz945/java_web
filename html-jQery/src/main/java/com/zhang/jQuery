@@ -83,3 +83,16 @@ element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素
    $("body > div") 选择body中所有div子元素
    $("#one+div")  选择id为one的下一个div标签的元素
    $("#two~div")  选择 id为two 的元素后面的所有 div 兄弟元素
+
+3、基本选择器
+   $("div:first")  选择第一个div
+   $("div:last")   选择最后一个div
+   $("div:not(.one)")  选择div中class全不为one的元素
+   $("div:even")  选择索引值为偶数的div
+   $("div:odd")  选择索引值为基数的div
+   $("div:gt(3)") 选择索引值大于3的索引div
+   $("div:eq(3)") 选择索引值等于3的索引值
+   $("div:lt(3)") 选择索引值小于3的所有div
+   $(":header") 选择所有的标题元素
+   $(":animated") 选择所有正在执行动画的元素
+   $("div::not(animated):last")  选择没有执行动画的最后一个div
