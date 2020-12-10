@@ -176,3 +176,12 @@ element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素
             alert($(":checkbox").attr("checked")); //undefined
 
             alert($(":checkbox").prop("checked")); //false
+
+10、name属性的用法
+   var items = $("[name='items']");
+
+   反选
+   $(":checkbox[name='items']").each(function () {
+   				// 在each遍历的function函数中，有一个this对象。这个this对象是当前正在遍历到的dom对象
+   				this.checked = !this.checked;
+   			});
