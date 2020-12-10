@@ -102,3 +102,8 @@ element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素
    $("div:empty")  选择不包含子元素(或者文本元素) 的 div 空元素
    $("div:has(.mini)")   选择含有 class 为 mini 元素的 div 元素
    $("div:parent")  选择含有子元素(或者文本元素)的div元素
+
+5、表单对象选择器
+   $(":text:enabled").val("我是万能的程序员");
+   $(":text:disabled").val("管你可用不可用，反正我是万能的程序员");
+   $(":checked:checked").length
