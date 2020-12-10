@@ -107,3 +107,38 @@ element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素
    $(":text:enabled").val("我是万能的程序员");
    $(":text:disabled").val("管你可用不可用，反正我是万能的程序员");
    $(":checked:checked").length
+
+6、元素筛选方法
+/**
+
+	过滤
+	eq(index|-index)
+	first()
+	last()
+	hasClass(class)
+	filter(expr|obj|ele|fn) 	
+	is(expr|obj|ele|fn)1.6*
+	has(expr|ele)
+	not(expr|ele|fn)
+	slice(start,[end])
+
+	查找
+	children([expr])
+	closest(expr,[con]|obj|ele)1.6*
+	find(expr|obj|ele)
+	next([expr])
+	nextall([expr])
+	nextUntil([exp|ele][,fil])1.6*
+	parent([expr])
+	parents([expr])
+	parentsUntil([exp|ele][,fil])1.6*
+	prev([expr])
+	prevall([expr])
+	prevUntil([exp|ele][,fil])1.6*
+	siblings([expr])
+
+	串联
+	add(expr|ele|html|obj[,con])
+
+
+	*/
