@@ -185,3 +185,9 @@ element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素
    				// 在each遍历的function函数中，有一个this对象。这个this对象是当前正在遍历到的dom对象
    				this.checked = !this.checked;
    			});
+
+
+   $("input[type=button]:eq(0)").click(function(){
+   					//$("#single :option:eq(2)").attr("selected", "selected");
+   					$("#single").val(["s3"]);
+   				});
