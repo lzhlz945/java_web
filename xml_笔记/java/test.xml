@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<students>
+<student num="001">
+<name>
+狼崽</name>
+<age>
+20</age>
+</student>
+<student num="002">
+<name>
+星儿</name>
+<age>
+18</age>
+</student>
+</students>
