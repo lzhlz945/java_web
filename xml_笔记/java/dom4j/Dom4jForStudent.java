@@ -27,6 +27,7 @@ public class Dom4jForStudent {
         //用父级 去获取子标签 element
         List<Element> Students = rootElement.elements();
         for (Element student : Students) {
+            System.out.println(student.asXML());
             //遍历父级获取的子标签，再用这个标签获取里面的标签
             String name = student.elementText("name");
             String age = student.elementText("age");
