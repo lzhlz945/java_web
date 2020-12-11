@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<books>
+    <book SN="qwe1234567">
+        <name>时间简史</name>
+        <author>霍金</author>
+        <price>175</price>
+    </book>
+
+    <book SN="qwe2234567">
+        <name>红楼梦</name>
+        <author>曹雪芹</author>
+        <price>200</price>
+    </book>
+</books>
