@@ -1,6 +1,7 @@
 package dom4j;
 
 import org.dom4j.Document;
+import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 import org.junit.Test;
@@ -38,5 +39,27 @@ public class Dom4jForStudent {
         }
 
 
+    }
+    public Document createDocument() {
+        Document document = DocumentHelper.createDocument();
+        Element root = document.addElement( "root" );
+
+        Element author1 = root.addElement( "author" )
+                .addAttribute( "name", "James" )
+                .addAttribute( "location", "UK" )
+                .addText( "James Strachan" );
+
+        Element author2 = root.addElement( "author" )
+                .addAttribute( "name", "Bob" )
+                .addAttribute( "location", "US" )
+                .addText( "Bob McWhirter" );
+
+        return document;
+    }
+
+    public static void main(String[] args) {
+        Dom4jForStudent dom4jForStudent = new Dom4jForStudent();
+        Document document = dom4jForStudent.createDocument();
+        System.out.println(document.asXML());
     }
 }
