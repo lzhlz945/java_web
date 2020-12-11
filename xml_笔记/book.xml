@@ -8,10 +8,7 @@
 
     <book SN="qwe2234567">
         <name>红楼梦</name>
-        <author>
-            <![CDATA[<<<<<<曹雪芹]]>
-            </author>
-
+        <author><![CDATA[<<<<<<曹雪芹]]></author>
         <price>200</price>
     </book>
 </books>

@@ -8,3 +8,12 @@
 
 2、xml中引入css文件
 <?xml-stylesheet type="text/css" href="cd_catalog.css"?>
+
+3、验证xml
+   XML 文档必须有根元素
+   XML 文档必须有关闭标签
+   XML 标签对大小写敏感
+   XML 元素必须被正确的嵌套
+   XML 属性必须加引号
+
+4、特殊字符 <![CDATA[>><><]]>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<students>
+    <student num="2020001">
+        <name>张无忌</name>
+        <age>30</age>
+        <addr>beijing</addr>
+    </student>
+    <student num="2020002">
+        <name>赵敏</name>
+        <age>20</age>
+        <addr>shanghai</addr>
+    </student>
+    <student num="2020003">
+        <name>狼崽</name>
+        <age>30</age>
+        <addr>重庆</addr>
+    </student>
+    <student num="2020004">
+        <name>星儿</name>
+        <age>20</age>
+        <addr>四川</addr>
+    </student>
+
+
+
+</students>
