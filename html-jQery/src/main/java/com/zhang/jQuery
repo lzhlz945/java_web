@@ -252,3 +252,18 @@ div{
    //淡化到  fadeTo()  $("#div1").fadeTo("slow",Math.random());
 
    //淡化切换  fadeToggle()  $("#div1").fadeToggle("slow","linear");
+
+13、事件
+   click()  绑定单击事件
+   mouseover() 鼠标移入事件
+   mouseout()  鼠标移出事件
+   bind()  可以给元素绑定一个或多个事件
+   one()   和bind一样，但事件指挥相应一次
+   unbind()
+   live()  后面重新添加的动态也又效果
+
+  格式$("#small").bind("mouseover mouseout mousemove",function (event) {
+    			if (event.type == "mouseover") {
+    			bind("xx事件 xx事件").function(event){ 事件之间用空格隔开
+    			    event.type=xx事件
+    			}
