@@ -21,6 +21,26 @@
     </init-param>
   </servlet>
 
+  <servlet>
+    <servlet-name>context1</servlet-name>
+    <servlet-class>com.zhang.servlet.ServletContext1</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>context2</servlet-name>
+    <servlet-class>com.zhang.servlet.ServletContext2</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>context1</servlet-name>
+    <url-pattern>/context001</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>context2</servlet-name>
+    <url-pattern>/context002</url-pattern>
+  </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>firstServlet</servlet-name>
     <url-pattern>/first</url-pattern>
