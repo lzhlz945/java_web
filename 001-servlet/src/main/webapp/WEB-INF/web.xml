@@ -31,6 +31,15 @@
     <servlet-class>com.zhang.servlet.ServletContext2</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>request1</servlet-name>
+    <servlet-class>com.zhang.servlet.RequestServlet01</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>request1</servlet-name>
+    <url-pattern>/request1</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>context1</servlet-name>
     <url-pattern>/context001</url-pattern>

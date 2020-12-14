@@ -5,10 +5,19 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="http://localhost:8080/web" method="post">
+<!--    <form action="http://localhost:8080/web" method="post">
+
         <input type="hidden" name="action" value="login" />
         <input type="hidden" name="username" value="root" />
         <input type="submit">
-    </form>
+    </form>-->
+ <form action="http://localhost:8080/first/request1" method="post">
+    用户名：<input type="text" name="username"><br/>
+    密码：<input type="password" name="password"><br/>
+    兴趣爱好：<input type="checkbox" name="hobby" value="cpp">C++
+    <input type="checkbox" name="hobby" value="java">Java
+    <input type="checkbox" name="hobby" value="js">JavaScript<br/>
+    <input type="submit">
+ </form>
 </body>
 </html>
