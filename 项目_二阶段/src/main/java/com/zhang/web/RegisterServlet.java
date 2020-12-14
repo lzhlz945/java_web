@@ -36,7 +36,7 @@ public class RegisterServlet extends HttpServlet {
 
            }else {
                userService.login(user);
-               request.getRequestDispatcher("/pages/user/pages/user/regist_success.html").forward(request,response);
+               request.getRequestDispatcher("/pages/user/regist_success.html").forward(request,response);
            }
 
 
