@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Enumeration;
 
 /**
  * @author: create by zhl
@@ -40,6 +41,14 @@ public class FirstServlet extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
+        String name = config.getInitParameter("name");
+        String url = config.getInitParameter("url");
+        Enumeration<String> initParameterNames = config.getInitParameterNames();
+        while (initParameterNames.hasMoreElements()){
+            String s = initParameterNames.nextElement();
+            System.out.println(s);
+        }
+        System.out.println(name+":"+url);
         System.out.println("我自己做了其他的事情");
     }
 }

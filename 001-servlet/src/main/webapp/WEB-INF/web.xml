@@ -7,6 +7,14 @@
   <servlet>
     <servlet-name>firstServlet</servlet-name>
     <servlet-class>com.zhang.servlet.FirstServlet</servlet-class>
+    <init-param>
+      <param-name>name</param-name>
+      <param-value>zs</param-value>
+    </init-param>
+    <init-param>
+      <param-name>url</param-name>
+      <param-value>http:www.baidu.com</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>firstServlet</servlet-name>
