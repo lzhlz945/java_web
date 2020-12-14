@@ -5,6 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/html-jQery" />
     <file type="web" url="file://$PROJECT_DIR$/html_js" />
     <file type="web" url="file://$PROJECT_DIR$/web-html-css" />
+    <file type="web" url="file://$PROJECT_DIR$/项目_二阶段" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -15,6 +16,7 @@
         <option value="$PROJECT_DIR$/html-jQery/pom.xml" />
         <option value="$PROJECT_DIR$/jquery-002/pom.xml" />
         <option value="$PROJECT_DIR$/001-servlet/pom.xml" />
+        <option value="$PROJECT_DIR$/项目_二阶段/pom.xml" />
       </list>
     </option>
   </component>
