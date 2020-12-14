@@ -6,6 +6,8 @@ import org.junit.Test;
 
 import java.io.InputStream;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -51,7 +53,14 @@ public class JdbcUtils {
      * 关闭连接，放回数据库连接池
      * @param conn
      */
-    public static void close(Connection conn){
+    public static void close(ResultSet rs, PreparedStatement ps ,Connection conn) {
+        if (ps != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
         if (conn != null) {
             try {
                 conn.close();
@@ -59,7 +68,15 @@ public class JdbcUtils {
                 e.printStackTrace();
             }
         }
-    }
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
 
+        }
+
+    }
 
 }
