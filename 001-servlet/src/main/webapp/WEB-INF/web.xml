@@ -46,6 +46,15 @@
     <servlet-class>com.zhang.请求转发.DispactherServlet2</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>base01</servlet-name>
+    <servlet-class>com.zhang.base路径.BaseServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>base01</servlet-name>
+    <url-pattern>/base</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>dispactherServlet1</servlet-name>
     <url-pattern>/dis1</url-pattern>
