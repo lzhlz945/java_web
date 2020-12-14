@@ -71,3 +71,10 @@
 
     //此方法一定要在获取流对象前有效
     response.setContentType("text/html;charset=utf-8");
+
+九、重定向
+   1、浏览器地址发生变化
+   2、两次请求
+   3、不能访问WEB-INF下的文件
+   4、可以访问工程以外的文件
+   5、不能共享request下的东西

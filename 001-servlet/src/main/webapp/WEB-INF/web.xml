@@ -56,6 +56,23 @@
     <servlet-class>com.zhang.servlet.ResponseServlet</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>resp01</servlet-name>
+    <servlet-class>com.zhang.重定向.Resp1</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>resp02</servlet-name>
+    <servlet-class>com.zhang.重定向.Resp2</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>resp01</servlet-name>
+    <url-pattern>/ressp0</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>resp02</servlet-name>
+    <url-pattern>/ressp1</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>response1</servlet-name>
     <url-pattern>/rsp1</url-pattern>
