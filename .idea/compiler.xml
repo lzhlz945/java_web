@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="001-servlet" />
+        <module name="html-jQery" />
+        <module name="html_js" />
+        <module name="jquery-002" />
+        <module name="testmaven" />
+        <module name="web-html-css" />
+        <module name="项目_二阶段" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="001-servlet" target="1.8" />
+      <module name="html-jQery" target="1.8" />
+      <module name="html_js" target="1.8" />
+      <module name="jquery-002" target="1.8" />
+      <module name="testmaven" target="1.7" />
+      <module name="web-html-css" target="1.8" />
+      <module name="项目_二阶段" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

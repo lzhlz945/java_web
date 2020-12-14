@@ -200,3 +200,73 @@ element ~ siblings	$("div ~ p")	<div> 元素同级的所有 <p> 元素
    					$(this).appendTo("select[name=sel02]")
    				})
    			})
+
+12、css操作
+
+div{
+		width:100px;
+		height:260px;
+	}
+
+	div.whiteborder{
+		border: 2px white solid;
+	}
+
+	div.redDiv{
+		background-color: red;
+	}
+
+	div.blueBorder{
+		border: 5px blue solid;
+	}
+
+    //addClass() - 向被选元素添加一个或多个类
+    $divEle.addClass('redDiv blueBorder');
+
+    //removeClass() - 从被选元素删除一个或多个类
+    			$divEle.removeClass();
+
+    //toggleClass() - 对被选元素进行添加/删除类的切换操作
+     			$divEle.toggleClass('redDiv')
+
+    //offset() - 返回第一个匹配元素相对于文档的位置。
+    			var pos = $divEle.offset();
+    			console.log(pos);
+
+    			$divEle.offset({
+    				top:100,
+    				left:50
+    			});
+
+12、动画显示
+   //显示   show()  $("#div1").show(1000);
+
+   //隐藏  hide()  $("#div1").hide(1000);
+
+   //切换   toggle()  $("#div1").toggle(1000);
+
+   //淡入   fadeIn()  $("#div1").fadeIn(500);
+
+   //淡出  fadeOut()  $("#div1").fadeOut(500);
+
+   //淡化到  fadeTo()  $("#div1").fadeTo("slow",Math.random());
+
+   //淡化切换  fadeToggle()  $("#div1").fadeToggle("slow","linear");
+
+13、事件
+   click()  绑定单击事件
+   mouseover() 鼠标移入事件
+   mouseout()  鼠标移出事件
+   bind()  可以给元素绑定一个或多个事件
+   one()   和bind一样，但事件指挥相应一次
+   unbind()
+   live()  后面重新添加的动态也又效果
+
+  格式$("#small").bind("mouseover mouseout mousemove",function (event) {
+    			if (event.type == "mouseover") {
+    			bind("xx事件 xx事件").function(event){ 事件之间用空格隔开
+    			    event.type=xx事件
+    			}
+
+14、冒泡事件
+    当父级和子级元素绑定同一个事件，点击子级元素，父级也会响应

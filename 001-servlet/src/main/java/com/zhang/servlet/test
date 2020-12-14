@@ -1,0 +1,80 @@
+一、Servlet 的生命周期
+   1、执行 Servlet 构造器方法
+   2、执行 init 初始化方法 第一、二步，是在第一次访问，的时候创建 Servlet 程序会调用。
+   3、执行 service 方法 第三步，每次访问都会调用。
+   4、执行 destroy 销毁方法 第四步，在 web 工程停止的时候调用
+   执行servlet的构造器、执行init()方法，这两步只有第一次访问的时候才执行，执行service每次调用servlet都会执行，最后执行destroy销毁。
+
+二、
+   servlet是接口，httpServlet是它的实现类，
+   servletRequest是HttpServletRequest的父类
+
+
+三、
+
+   2.ServletConfig 类 ServletConfig 类从类名上来看，就知道是 Servlet 程序的配置信息类。
+   Servlet 程序和 ServletConfig 对象都是由 Tomcat 负责创建，我们负责使用。
+   Servlet 程序默认是第一次访问的时候创建，ServletConfig 是每个 Servlet 程序创建时，就创建一个对应的 ServletConfig 对 象。
+
+   a)ServletConfig 类的三大作用 1、可以获取 Servlet 程序的别名 servlet-name 的值 2、获取初始化参数 init-param 3、获取 ServletContext
+
+
+四、ServletContext 类
+   a)什么是 ServletContext?
+     1、ServletContext 是一个接口，它表示 Servlet 上下文对象
+     2、一个 web 工程，只有一个 ServletContext 对象实例。
+     3、ServletContext 对象是一个域对象。
+     4、ServletContext 是在 web 工程部署启动的时候创建。在 web 工程停止的时候销毁。
+
+   什么是域对象?
+     域对象，是可以像 Map 一样存取数据的对象，叫域对象。
+     这里的域指的是存取数据的操作范围，整个 web 工程。
+     存数据 取数据 删除 数据 Map put() get() remove() 域对象 setAttribute() getAttribute() removeAttribute();
+
+   b)ServletContext 类的四个作用
+     1、获取 web.xml 中配置的上下文参数 context-param
+     2、获取当前的工程路径，格式: /工程路径
+     3、获取工程部署后在服务器硬盘上的绝对路径
+     4、像 Map 一样存取数据
+
+
+五、get、post乱码
+      get:
+        //1 先以 iso8859-1 进行编码
+        // 2 再以 utf-8 进行解码
+        username = new String(username.getBytes("iso-8859-1"), "UTF-8");
+      post:
+         request.setCharacterEncoding("utf-8");
+
+六、请求转发
+   1、浏览器地址栏没有变化；
+   2、它们是一次请求；
+   3、它们共享request中的数据
+   4、它们可以访问WEB-INF下的文件
+   5、不能访问工程以为的文件
+
+七、路径问题
+   在实际开发中，路径都使用绝对路径，而不简单的使用相对路径。 1、绝对路径 2、base+相对
+
+   web 中 / 斜杠的不同意义 在 web 中 / 斜杠 是一种绝对路径。
+   / 斜杠 如果被浏览器解析，得到的地址是：http://ip:port/
+   <a href="/">斜杠</a> / 斜杠 如果被服务器解析，得到的地址是：http://ip:port/工程路径
+    1、<url-pattern>/servlet1</url-pattern>
+    2、servletContext.getRealPath(“/”);
+    3、request.getRequestDispatcher(“/”);
+    特殊情况： response.sendRediect(“/”); 把斜杠发送给浏览器解析。得到 http://ip:port/
+
+八、response
+   字节流 getOutputStream(); 常用于下载（传递二进制数据）
+   字符流 getWriter(); 常用于回传字符串（常用）
+   两个流同时只能使用一个。 使用了字节流，就不能再使用字符流，反之亦然，否则就会报错。
+
+    //此方法一定要在获取流对象前有效
+    response.setContentType("text/html;charset=utf-8");
+
+九、重定向
+   1、浏览器地址发生变化
+   2、两次请求
+   3、不能访问WEB-INF下的文件
+   4、可以访问工程以外的文件
+   5、不能共享request下的东西

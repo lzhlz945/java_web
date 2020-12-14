@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="项目_二阶段:war">
+    <output-path>$PROJECT_DIR$/项目_二阶段/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>项目_二阶段</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="项目_二阶段-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="项目_二阶段:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,111 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <context-param>
+    <param-name>a</param-name>
+    <param-value>b</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>firstServlet</servlet-name>
+    <servlet-class>com.zhang.servlet.FirstServlet</servlet-class>
+    <init-param>
+      <param-name>name</param-name>
+      <param-value>zs</param-value>
+    </init-param>
+    <init-param>
+      <param-name>url</param-name>
+      <param-value>http:www.baidu.com</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>context1</servlet-name>
+    <servlet-class>com.zhang.servlet.ServletContext1</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>context2</servlet-name>
+    <servlet-class>com.zhang.servlet.ServletContext2</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>request1</servlet-name>
+    <servlet-class>com.zhang.servlet.RequestServlet01</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>dispactherServlet1</servlet-name>
+    <servlet-class>com.zhang.请求转发.DispactherServlet1</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>dispactherServlet2</servlet-name>
+    <servlet-class>com.zhang.请求转发.DispactherServlet2</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>base01</servlet-name>
+    <servlet-class>com.zhang.base路径.BaseServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>response1</servlet-name>
+    <servlet-class>com.zhang.servlet.ResponseServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>resp01</servlet-name>
+    <servlet-class>com.zhang.重定向.Resp1</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>resp02</servlet-name>
+    <servlet-class>com.zhang.重定向.Resp2</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>resp01</servlet-name>
+    <url-pattern>/ressp0</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>resp02</servlet-name>
+    <url-pattern>/ressp1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>response1</servlet-name>
+    <url-pattern>/rsp1</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>base01</servlet-name>
+    <url-pattern>/base</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>dispactherServlet1</servlet-name>
+    <url-pattern>/dis1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>dispactherServlet2</servlet-name>
+    <url-pattern>/dis2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>request1</servlet-name>
+    <url-pattern>/request1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>context1</servlet-name>
+    <url-pattern>/context001</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>context2</servlet-name>
+    <url-pattern>/context002</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>firstServlet</servlet-name>
+    <url-pattern>/first</url-pattern>
+  </servlet-mapping>
+</web-app>
