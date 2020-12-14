@@ -3,3 +3,8 @@
    2、执行 init 初始化方法 第一、二步，是在第一次访问，的时候创建 Servlet 程序会调用。
    3、执行 service 方法 第三步，每次访问都会调用。
    4、执行 destroy 销毁方法 第四步，在 web 工程停止的时候调用
+   执行servlet的构造器、执行init()方法，这两步只有第一次访问的时候才执行，执行service每次调用servlet都会执行，最后执行destroy销毁。
+
+二、
+   servlet是接口，httpServlet是它的实现类，
+   servletRequest是HttpServletRequest的父类
