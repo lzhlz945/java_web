@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Enumeration;
+import java.util.Set;
 
 /**
  * @author: create by zhl
@@ -39,8 +40,14 @@ public class FirstServlet extends HttpServlet {
         ServletContext servletContext = request.getServletContext();
         String contextPath = servletContext.getContextPath();
         String name = servletContext.getInitParameter("a");
+        String realPath = servletContext.getRealPath("/");
+        String realPath1 = servletContext.getRealPath("css");
+        String realPath2 = servletContext.getRealPath("1.jpg");
         System.out.println(name);
-        System.out.println(contextPath);
+        System.out.println("当前工程路径"+contextPath);
+        System.out.println("工程部署路径"+realPath);
+        System.out.println("工程下css的绝对路径"+realPath1);
+        System.out.println("工程下1.jpg的绝对路径"+realPath2);
         System.out.println("hello|doGet");
     }
 
