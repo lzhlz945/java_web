@@ -8,3 +8,12 @@
 二、
    servlet是接口，httpServlet是它的实现类，
    servletRequest是HttpServletRequest的父类
+
+
+三、
+
+   2.ServletConfig 类 ServletConfig 类从类名上来看，就知道是 Servlet 程序的配置信息类。
+   Servlet 程序和 ServletConfig 对象都是由 Tomcat 负责创建，我们负责使用。
+   Servlet 程序默认是第一次访问的时候创建，ServletConfig 是每个 Servlet 程序创建时，就创建一个对应的 ServletConfig 对 象。
+
+   a)ServletConfig 类的三大作用 1、可以获取 Servlet 程序的别名 servlet-name 的值 2、获取初始化参数 init-param 3、获取 ServletContext
