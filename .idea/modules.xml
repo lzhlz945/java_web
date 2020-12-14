@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/001-servlet/001-servlet.iml" filepath="$PROJECT_DIR$/001-servlet/001-servlet.iml" />
       <module fileurl="file://$PROJECT_DIR$/html-jQery/html-jQery.iml" filepath="$PROJECT_DIR$/html-jQery/html-jQery.iml" />
       <module fileurl="file://$PROJECT_DIR$/html_js/html_js.iml" filepath="$PROJECT_DIR$/html_js/html_js.iml" />
       <module fileurl="file://$PROJECT_DIR$/jquery-002/jquery-002.iml" filepath="$PROJECT_DIR$/jquery-002/jquery-002.iml" />

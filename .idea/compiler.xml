@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="001-servlet" />
         <module name="html-jQery" />
         <module name="html_js" />
         <module name="jquery-002" />
@@ -15,6 +16,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="001-servlet" target="1.8" />
       <module name="html-jQery" target="1.8" />
       <module name="html_js" target="1.8" />
       <module name="jquery-002" target="1.8" />

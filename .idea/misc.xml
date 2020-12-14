@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/001-servlet" />
     <file type="web" url="file://$PROJECT_DIR$/html-jQery" />
     <file type="web" url="file://$PROJECT_DIR$/html_js" />
     <file type="web" url="file://$PROJECT_DIR$/web-html-css" />
@@ -13,6 +14,7 @@
         <option value="$PROJECT_DIR$/html_js/pom.xml" />
         <option value="$PROJECT_DIR$/html-jQery/pom.xml" />
         <option value="$PROJECT_DIR$/jquery-002/pom.xml" />
+        <option value="$PROJECT_DIR$/001-servlet/pom.xml" />
       </list>
     </option>
   </component>
