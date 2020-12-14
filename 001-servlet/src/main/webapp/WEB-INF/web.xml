@@ -4,6 +4,10 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <context-param>
+    <param-name>a</param-name>
+    <param-value>b</param-value>
+  </context-param>
   <servlet>
     <servlet-name>firstServlet</servlet-name>
     <servlet-class>com.zhang.servlet.FirstServlet</servlet-class>
@@ -16,6 +20,7 @@
       <param-value>http:www.baidu.com</param-value>
     </init-param>
   </servlet>
+
   <servlet-mapping>
     <servlet-name>firstServlet</servlet-name>
     <url-pattern>/first</url-pattern>

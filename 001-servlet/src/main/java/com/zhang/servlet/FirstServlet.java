@@ -1,6 +1,7 @@
 package com.zhang.servlet;
 
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +22,7 @@ public class FirstServlet extends HttpServlet {
         System.out.println("hello|doPost");
     }
 
-    @Override
+    /*@Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String method = req.getMethod();
@@ -31,10 +32,15 @@ public class FirstServlet extends HttpServlet {
             System.out.println("doget方法被调用了");
 
         }
-    }
+    }*/
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        ServletContext servletContext = request.getServletContext();
+        String contextPath = servletContext.getContextPath();
+        String name = servletContext.getInitParameter("a");
+        System.out.println(name);
+        System.out.println(contextPath);
         System.out.println("hello|doGet");
     }
 
