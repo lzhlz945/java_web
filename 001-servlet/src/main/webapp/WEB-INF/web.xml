@@ -51,6 +51,16 @@
     <servlet-class>com.zhang.base路径.BaseServlet</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>response1</servlet-name>
+    <servlet-class>com.zhang.servlet.ResponseServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>response1</servlet-name>
+    <url-pattern>/rsp1</url-pattern>
+  </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>base01</servlet-name>
     <url-pattern>/base</url-pattern>

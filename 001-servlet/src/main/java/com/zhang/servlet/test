@@ -63,3 +63,11 @@
     2、servletContext.getRealPath(“/”);
     3、request.getRequestDispatcher(“/”);
     特殊情况： response.sendRediect(“/”); 把斜杠发送给浏览器解析。得到 http://ip:port/
+
+八、response
+   字节流 getOutputStream(); 常用于下载（传递二进制数据）
+   字符流 getWriter(); 常用于回传字符串（常用）
+   两个流同时只能使用一个。 使用了字节流，就不能再使用字符流，反之亦然，否则就会报错。
+
+    //此方法一定要在获取流对象前有效
+    response.setContentType("text/html;charset=utf-8");
