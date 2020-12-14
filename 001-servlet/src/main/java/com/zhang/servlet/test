@@ -45,3 +45,10 @@
         username = new String(username.getBytes("iso-8859-1"), "UTF-8");
       post:
          request.setCharacterEncoding("utf-8");
+
+六、请求转发
+   1、浏览器地址栏没有变化；
+   2、它们是一次请求；
+   3、它们共享request中的数据
+   4、它们可以访问WEB-INF下的文件
+   5、不能访问工程以为的文件

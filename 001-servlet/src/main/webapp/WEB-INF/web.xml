@@ -36,6 +36,24 @@
     <servlet-class>com.zhang.servlet.RequestServlet01</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>dispactherServlet1</servlet-name>
+    <servlet-class>com.zhang.请求转发.DispactherServlet1</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>dispactherServlet2</servlet-name>
+    <servlet-class>com.zhang.请求转发.DispactherServlet2</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>dispactherServlet1</servlet-name>
+    <url-pattern>/dis1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>dispactherServlet2</servlet-name>
+    <url-pattern>/dis2</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>request1</servlet-name>
     <url-pattern>/request1</url-pattern>
