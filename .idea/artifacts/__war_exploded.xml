@@ -17,7 +17,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/项目_二阶段/target/项目_二阶段-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="项目_二阶段/web/Web" />
+      <element id="javaee-facet-resources" facet="book_tow/web/Web" />
     </root>
   </artifact>
 </component>
