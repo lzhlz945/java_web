@@ -2,7 +2,7 @@ package com.zhang.JdbcUtils;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
-import org.junit.Test;
+
 
 import java.io.InputStream;
 import java.sql.Connection;
