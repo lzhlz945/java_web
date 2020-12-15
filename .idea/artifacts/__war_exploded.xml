@@ -11,13 +11,13 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="项目_二阶段" />
+          <element id="module-output" name="book_tow" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/项目_二阶段/target/项目_二阶段-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/book_tow/target/项目_二阶段-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="项目_二阶段/web/Web" />
+      <element id="javaee-facet-resources" facet="book_tow/web/Web" />
     </root>
   </artifact>
 </component>
