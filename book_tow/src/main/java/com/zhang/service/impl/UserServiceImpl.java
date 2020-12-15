@@ -25,8 +25,7 @@ public class UserServiceImpl implements UserService {
 
     //注册
     @Override
-    public void login(User user) {
-
-        userDao.login(user);
+    public User login(User user) {
+        return userDao.login(user);
     }
 }

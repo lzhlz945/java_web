@@ -12,5 +12,6 @@ public interface UserDao {
 
     User queryUserName(String username);
 
-    void login(User user);
+
+    User login(User user);
 }

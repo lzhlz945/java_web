@@ -24,11 +24,8 @@ public class UserDaoImpl extends BaseDao implements UserDao{
 
     //注册
     @Override
-    public void login(User user) {
-        String sql="insert into t_user(username,password,email) values(?,?,?)";
-        commonsUpdate(con,sql,user.getUsername(),user.getPassword(),user.getEmail());
-
+    public User login(User user) {
+        String sql="SELECT id,username,password,email from t_user WHERE username=? and password=?";
+        return selectObject(con,sql,User.class,user.getUsername(),user.getPassword());
     }
-
-
 }

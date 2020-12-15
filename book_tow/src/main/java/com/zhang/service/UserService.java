@@ -13,5 +13,7 @@ public interface UserService {
     boolean existUserName(String username);
 
     //注册
-    void login(User user);
+    User login(User user);
+
+
 }
