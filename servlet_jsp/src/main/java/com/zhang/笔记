@@ -93,3 +93,15 @@
     jsp 表达式脚本输出 null 值的时候，输出的是 null 字符串。
     jsp页面不生效：
     <%@page isELIgnored="false" %>
+
+    <c:set />
+            作用：set标签可以往域中保存数据
+
+            域对象.setAttribute(key,value);
+            scope 属性设置保存到哪个域
+                page表示PageContext域（默认值）
+                request表示Request域
+                session表示Session域
+                application表示ServletContext域
+            var属性设置key是多少
+            value属性设置值
