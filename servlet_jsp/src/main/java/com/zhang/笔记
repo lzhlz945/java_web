@@ -72,4 +72,11 @@
          <%--<jsp:forward page=""></jsp:forward> 是请求转发标签，它的功能就是请求转发 page 属性设置请求转发的路径 --%>
          <jsp:forward page="/scope2.jsp"></jsp:forward>
 
+六、监听器
+
+    什么是 Listener 监听器？
+      1、Listener 监听器它是 JavaWeb 的三大组件之一。
+         JavaWeb 的三大组件分别是：Servlet 程序、Filter 过滤器、Listener 监 听器。
+      2、Listener 它是 JavaEE 的规范，就是接口
+      3、监听器的作用是，监听某种事物的变化。然后通过回调函数，反馈给客户（程序）去做一些相应的处理。
 
