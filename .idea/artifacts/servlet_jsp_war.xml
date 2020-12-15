@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="servlet_jsp.war">
+    <root id="archive" name="servlet_jsp-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="servlet_jsp:war exploded" />
     </root>
   </artifact>
