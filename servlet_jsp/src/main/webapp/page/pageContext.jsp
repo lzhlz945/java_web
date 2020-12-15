@@ -6,9 +6,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
+<%
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() + "/";
+%>
 <html>
 <head>
     <title>Title</title>
+    <base href="<%=basePath%>">
 </head>
 <body>
     <%--
@@ -22,6 +28,7 @@
     --%>
     <%
         pageContext.setAttribute("req", request);
+        pageContext.setAttribute("basePath", basePath);
     %>
     <%=request.getScheme() %> <br>
     1.协议： ${ req.scheme }<br>
@@ -31,6 +38,7 @@
     5.获取请求方法：${ pageContext.request.method }<br>
     6.获取客户端ip地址：${ pageContext.request.remoteHost }<br>
     7.获取会话的id编号：${ pageContext.session.id }<br>
+${basePath}
 
 </body>
 </html>
