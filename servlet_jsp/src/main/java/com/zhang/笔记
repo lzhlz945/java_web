@@ -27,3 +27,20 @@
     代码脚本 代码脚本的格式是：
         <% java 语句 %> 代码脚本的作用是：
         可以在 jsp 页面中，编写我们自己需要的功能（写的是 java 语句）。
+
+三、jsp 九大内置对象
+   jsp 中的内置对象，是指 Tomcat 在翻译 jsp 页面成为 Servlet 源代码后，内部提供的九大对象，叫内置对象。
+        request             请求对象
+        response            响应对象
+        session             会话对象
+        application         servletContext对象
+        config              servletConfig对象
+        pageContext         jsp上下文对象
+        page                指向jsp当前对象
+        out                 jsp的输出流对象
+        exception           异常对象
+
+
+
+
+
