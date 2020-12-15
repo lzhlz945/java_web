@@ -105,3 +105,21 @@
                 application表示ServletContext域
             var属性设置key是多少
             value属性设置值
+             <%
+                   session.setAttribute("session1","sessionTest");
+                %>
+                session原来的数据：${session1}
+                <c:set scope="session" var="session1" value="after" />
+                    session利用set修改之后：${session1}
+
+     iii.<c:choose> <c:when> <c:otherwise>标签
+         作用：多路判断。跟switch ... case .... default非常接近
+
+         choose标签开始选择判断
+         when标签表示每一种判断情况
+             test属性表示当前这种判断情况的值
+         otherwise标签表示剩下的情况
+
+         <c:choose> <c:when> <c:otherwise>标签使用时需要注意的点：
+             1、标签里不能使用html注释，要使用jsp注释
+             2、when标签的父标签一定要是choose标签

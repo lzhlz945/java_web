@@ -31,6 +31,13 @@
     保存之后：${ sessionScope.abc } <br>
     <hr>
 
+    <%
+       session.setAttribute("session1","sessionTest");
+    %>
+    session原来的数据：${session1}
+    <c:set scope="session" var="session1" value="after" />
+        session利用set修改之后：${session1}
+
     <%--
        ii.<c:if />
          if标签用来做if判断。
@@ -39,7 +46,7 @@
     <c:if test="${ 12 == 12 }">
         <h1>12等于12</h1>
     </c:if>
-    <c:if test="${12==13}">
+    <c:if test="${12 !=13}">
         <h1>sss</h1>
     </c:if>
     <c:if test="${ 12 != 12 }">
@@ -61,36 +68,38 @@
         2、when标签的父标签一定要是choose标签
     --%>
     <%
-        request.setAttribute("height", 180);
+        request.setAttribute("height", 150);
     %>
-    <c:choose>
-        <%-- 这是html注释 --%>
-        <c:when test="${ requestScope.height > 190 }">
-            <h2>小巨人</h2>
-        </c:when>
-         <c:when test="${ requestScope.height > 180 }">
-            <h2>很高</h2>
-        </c:when>
-        <c:when test="${ requestScope.height > 170 }">
-            <h2>还可以</h2>
-        </c:when>
-        <c:otherwise>
-            <c:choose>
-                <c:when test="${requestScope.height > 160}">
-                    <h3>大于160</h3>
-                </c:when>
-                <c:when test="${requestScope.height > 150}">
-                    <h3>大于150</h3>
-                </c:when>
-                <c:when test="${requestScope.height > 140}">
-                    <h3>大于140</h3>
-                </c:when>
-                <c:otherwise>
-                    其他小于140
-                </c:otherwise>
-            </c:choose>
-        </c:otherwise>
-    </c:choose>
+     <c:choose>
+         <c:when test="${height==150}">
+             <h1>150</h1>
+         </c:when>
+         <c:when test="${height==160}">
+             <h1>160</h1>
+         </c:when>
+         <c:when test="${height==170}">
+             <h1>170</h1>
+         </c:when>
+       <c:otherwise>
+          <c:choose>
+              <c:when test="${height eq 170}">
+                  <h1>等于170</h1>
+              </c:when>
+              <c:when test="${height lt 180}">
+                  <h1>xiao于180</h1>
+              </c:when>
+              <c:when test="${height gt 180}">
+                  <h1>da于180</h1>
+              </c:when>
+
+          </c:choose>
+
+       </c:otherwise>
+
+
+
+     </c:choose>
+
 
 
 </body>
