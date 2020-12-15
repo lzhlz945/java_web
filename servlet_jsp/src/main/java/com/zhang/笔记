@@ -123,3 +123,15 @@
          <c:choose> <c:when> <c:otherwise>标签使用时需要注意的点：
              1、标签里不能使用html注释，要使用jsp注释
              2、when标签的父标签一定要是choose标签
+
+     <c:forEach />
+     <c:forEach items="${ requestScope.arr }" var="item">
+             ${ item } <br>
+         </c:forEach> --%>
+      属性：
+       items 表示遍历的集合
+                  var 表示遍历到的数据
+                  begin表示遍历的开始索引值
+                  end 表示结束的索引值
+                  step 属性表示遍历的步长值
+                  varStatus 属性表示当前遍历到的数据的状态

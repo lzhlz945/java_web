@@ -5,7 +5,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.zhang.Student" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@page isELIgnored="false" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -51,6 +51,15 @@
     <%
         request.setAttribute("arr", new String[]{"18610541354","18688886666","18699998888"});
     %>
+        <%--
+            items 表示遍历的集合
+            var 表示遍历到的数据
+            begin表示遍历的开始索引值
+            end 表示结束的索引值
+            step 属性表示遍历的步长值
+            varStatus 属性表示当前遍历到的数据的状态
+            for（int i = 1; i < 10; i+=2）
+        --%>
     <c:forEach items="${ requestScope.arr }" var="item">
         ${ item } <br>
     </c:forEach> --%>
@@ -70,42 +79,33 @@
     <hr>
     <%--4.遍历List集合---list中存放 Student类，有属性：编号，用户名，密码，年龄，电话信息--%>
     <%
-        List<Student> studentList = new ArrayList<Student>();
-        for (int i = 1; i <= 10; i++) {
-           // studentList.add(new Student(i,"username"+i ,"pass"+i,18+i,"phone"+i));
+        List<Student> studentList=new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            studentList.add(new Student(i,"name"+i,i*2,i*11));
         }
-        request.setAttribute("stus", studentList);
+        session.setAttribute("stuList",studentList);
     %>
-    <form action="" enctype=""></form>
-    <table>
-        <tr>
-            <th>编号</th>
-            <th>用户名</th>
-            <th>密码</th>
-            <th>年龄</th>
-            <th>电话</th>
-            <th>操作</th>
-        </tr>
-        <%--
-            items 表示遍历的集合
-            var 表示遍历到的数据
-            begin表示遍历的开始索引值
-            end 表示结束的索引值
-            step 属性表示遍历的步长值
-            varStatus 属性表示当前遍历到的数据的状态
-            for（int i = 1; i < 10; i+=2）
-        --%>
-    <c:forEach begin="2" end="7" step="2" varStatus="status" items="${requestScope.stus}" var="stu">
-        <tr>
-            <td>${stu.id}</td>
-            <td>${stu.username}</td>
-            <td>${stu.password}</td>
-            <td>${stu.age}</td>
-            <td>${stu.phone}</td>
-            <td>${status.step}</td>
-        </tr>
-    </c:forEach>
-    </table>
-
+         <div align="center">
+         <table>
+             <tr>
+                 <th>序号</th>
+                 <th>id</th>
+                 <th>姓名</th>
+                 <th>年龄</th>
+                 <th>成绩</th>
+                 <th>操作</th>
+             </tr>
+           <c:forEach begin="1" step="2" end="20" items="${sessionScope.stuList}" var="stu" varStatus="flag">
+             <tr>
+                 <td>${flag.count}</td>
+                 <td>${stu.id}</td>
+                 <td>${stu.name}</td>
+                 <td>${stu.age}</td>
+                 <td>${stu.score}</td>
+                 <td><a href="">删除/修改</a></td>
+             </tr>
+           </c:forEach>
+         </table>
+         </div>
 </body>
 </html>
