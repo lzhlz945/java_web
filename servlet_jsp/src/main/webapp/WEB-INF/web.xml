@@ -4,6 +4,15 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <context-param>
+    <param-name>username</param-name>
+    <param-value>root</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>url</param-name>
+    <param-value>jdbc:mysql:///test</param-value>
+  </context-param>
   <listener>
     <listener-class>com.zhang.listener.MyListenerImpl</listener-class>
   </listener>
