@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
         User user=service.login(new User(null,username,password,null));
         if(user == null){
             System.out.println("用户不存在");
-
+            request.getRequestDispatcher("/pages/user/login.html").forward(request,response);
         }else {
             request.getRequestDispatcher("/pages/user/login_success.html").forward(request,response);
         }
