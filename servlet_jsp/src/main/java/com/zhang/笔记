@@ -174,3 +174,11 @@
     2、form 标签的 encType 属性值必须为 multipart/form-data 值
     3、在 form 标签中使用 input type=file 添加上传的文件
     4、编写服务器代码（Servlet 程序）接收，处理上传的数据。
+
+    步骤：1、判断是不是分段文件
+         2、得到FileItemFactory 的实现类DiskFileItemFactory
+         3、new ServletFileUpload
+         4、parse解析传输过来的生成一个list
+         5、遍历list
+         6、判断是不是普通表单
+         7、getFieldName getString("UTF-8") getName()
