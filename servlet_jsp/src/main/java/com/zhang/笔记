@@ -86,3 +86,10 @@
         <listener>
            <listener-class>com.zhang.listener.MyListenerImpl</listener-class>
          </listener>
+七、EL表达式
+
+    EL 表达式的格式是：${表达式}
+    EL 表达式在输出 null 值的时候，输出的是空串。
+    jsp 表达式脚本输出 null 值的时候，输出的是 null 字符串。
+    jsp页面不生效：
+    <%@page isELIgnored="false" %>
