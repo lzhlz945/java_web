@@ -80,3 +80,9 @@
       2、Listener 它是 JavaEE 的规范，就是接口
       3、监听器的作用是，监听某种事物的变化。然后通过回调函数，反馈给客户（程序）去做一些相应的处理。
 
+    1、实现servletContext接口的 contextInitialized()和contextDestroyed()方法
+    2、contextInitialized()这里面可以得到servletContext,可以进行  servletContext.setAttribute("ss","u1s1");
+    3、在web.xml中定义标签
+        <listener>
+           <listener-class>com.zhang.listener.MyListenerImpl</listener-class>
+         </listener>

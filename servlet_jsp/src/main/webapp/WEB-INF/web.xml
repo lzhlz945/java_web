@@ -4,6 +4,13 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <listener>
+    <listener-class>com.zhang.listener.MyListenerImpl</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.zhang.listener.Listener1</listener-class>
+  </listener>
+
   <servlet>
     <servlet-name>jsp1</servlet-name>
     <servlet-class>com.zhang.Jsp1</servlet-class>
