@@ -13,6 +13,7 @@
         <module name="testmaven" />
         <module name="html-jQery" />
         <module name="book_tow" />
+        <module name="servlet_jsp" />
         <module name="web-html-css" />
       </profile>
     </annotationProcessing>
@@ -22,6 +23,7 @@
       <module name="html-jQery" target="1.8" />
       <module name="html_js" target="1.8" />
       <module name="jquery-002" target="1.8" />
+      <module name="servlet_jsp" target="1.7" />
       <module name="testmaven" target="1.7" />
       <module name="web-html-css" target="1.8" />
     </bytecodeTargetLevel>
