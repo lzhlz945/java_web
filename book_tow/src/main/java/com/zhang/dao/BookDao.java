@@ -26,4 +26,7 @@ public interface BookDao {
     //查询批量记录
     List<Book> queryBooks();
 
+    int getCount();
+
+    List<Book> getItems(int begin, int pageSize);
 }

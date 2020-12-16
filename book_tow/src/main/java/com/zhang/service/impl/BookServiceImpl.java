@@ -3,6 +3,7 @@ package com.zhang.service.impl;
 import com.zhang.dao.BookDao;
 import com.zhang.dao.impl.BookDaoImpl;
 import com.zhang.pojo.Book;
+import com.zhang.pojo.Page;
 import com.zhang.service.BookService;
 
 import java.util.List;
@@ -39,5 +40,37 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<Book> queryBooks() {
         return bookDao.queryBooks();
+    }
+
+    //分页操作
+    @Override
+    public Page<Book> page(int pageNo, int pageSize) {
+
+        //获取总计数
+        int count=bookDao.getCount();
+        int begin=(pageNo-1)*pageSize;
+        //获取分页数据items
+        List<Book> bookList= bookDao.getItems(begin,pageSize);
+
+        int pageTotal=count/pageSize;
+        if(count % pageSize > 1){
+
+            pageTotal+=1;
+        }
+        if(pageNo < 1){
+            pageNo=1;
+        }
+        if(pageNo > pageTotal){
+            pageNo=pageTotal;
+        }
+        Page<Book> page = new Page<>();
+        page.setPageNo(pageNo);
+        page.setPageSize(pageSize);
+        page.setPageTotal(pageTotal);
+        page.setPageTotalCount(count);
+        page.setItems(bookList);
+
+
+        return page;
     }
 }

@@ -47,4 +47,20 @@ public class BookDaoImpl extends BaseDao implements BookDao {
 
         return selectList(con,sql,Book.class);
     }
+
+    @Override
+    public int getCount() {
+        String sql = "select count(*) from t_book";
+        Number count = (Number) queryForSingleValue(sql);
+        return count.intValue();
+    }
+
+    @Override
+    public List<Book> getItems(int begin, int pageSize) {
+        String sql = "select `id` , `name` , `author` , `price` , `sales` , `stock` , `img_path` imgPath from t_book limit ?,?";
+
+        List<Book> bookList = selectList(con, sql, Book.class, begin, pageSize);
+        return bookList;
+
+    }
 }

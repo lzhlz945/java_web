@@ -1,6 +1,7 @@
 package com.zhang.service;
 
 import com.zhang.pojo.Book;
+import com.zhang.pojo.Page;
 
 import java.util.List;
 
@@ -21,4 +22,6 @@ public interface BookService {
     public Book queryBookById(Integer id);
 
     public List<Book> queryBooks();
+
+    Page<Book> page(int pageNo, int pageSize);
 }

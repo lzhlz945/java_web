@@ -1,6 +1,7 @@
 package com.zhang.web;
 
 import com.zhang.pojo.Book;
+import com.zhang.pojo.Page;
 import com.zhang.service.BookService;
 import com.zhang.service.impl.BookServiceImpl;
 import com.zhang.util.WebUtils;
@@ -22,6 +23,15 @@ public class BookServlet extends BaseServlet{
     private BookService bookService=new BookServiceImpl();
 
 
+    protected void page(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int pageNo = WebUtils.parseInt(req.getParameter("pageNo"), 1);
+        int pageSize = Page.PAGE_SIZE;
+       Page<Book> page=bookService.page(pageNo,pageSize);
+
+       req.setAttribute("page",page);
+       req.getRequestDispatcher("/pages/manager/book_manager.jsp").forward(req,resp);
+
+    }
     protected void delete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        1、获取请求的参数id，图书编程
         int id = WebUtils.parseInt(req.getParameter("id"), 0);

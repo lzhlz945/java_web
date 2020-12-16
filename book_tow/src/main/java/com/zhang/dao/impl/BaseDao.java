@@ -4,6 +4,8 @@ package com.zhang.dao.impl;
 
 
 import com.zhang.JdbcUtils.JdbcUtils;
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import java.lang.reflect.Field;
 import java.sql.*;
@@ -17,7 +19,8 @@ import java.util.List;
  * @date:2020/12/3
  */
 public abstract class BaseDao {
-
+    //使用DbUtils操作数据库
+    private QueryRunner queryRunner = new QueryRunner();
     //update、delete、insert
     public static void commonsUpdate(Connection con,String sql,Object ...args){
 
@@ -126,6 +129,28 @@ public abstract class BaseDao {
             ex.printStackTrace();
         } finally {
             JdbcUtils.close(rs,ps,null);
+        }
+        return null;
+
+    }
+
+
+    /**
+     * 执行返回一行一列的sql语句
+     * @param sql   执行的sql语句
+     * @param args  sql对应的参数值
+     * @return
+     */
+    public Object queryForSingleValue(String sql, Object... args){
+
+        Connection conn = JdbcUtils.getConnection();
+
+        try {
+            return queryRunner.query(conn, sql, new ScalarHandler(), args);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            JdbcUtils.close(null,null,conn);
         }
         return null;
 
