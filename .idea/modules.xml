@@ -6,11 +6,11 @@
       <module fileurl="file://$PROJECT_DIR$/book_tow/book_tow.iml" filepath="$PROJECT_DIR$/book_tow/book_tow.iml" />
       <module fileurl="file://$PROJECT_DIR$/html-jQery/html-jQery.iml" filepath="$PROJECT_DIR$/html-jQery/html-jQery.iml" />
       <module fileurl="file://$PROJECT_DIR$/html_js/html_js.iml" filepath="$PROJECT_DIR$/html_js/html_js.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/java_web.iml" filepath="$PROJECT_DIR$/.idea/java_web.iml" />
       <module fileurl="file://$PROJECT_DIR$/jquery-002/jquery-002.iml" filepath="$PROJECT_DIR$/jquery-002/jquery-002.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testmaven/testmaven.iml" filepath="$PROJECT_DIR$/testmaven/testmaven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servlet_jsp/servlet_jsp.iml" filepath="$PROJECT_DIR$/servlet_jsp/servlet_jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testmaven/test-maven.iml" filepath="$PROJECT_DIR$/testmaven/test-maven.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-html-css/web-html-css.iml" filepath="$PROJECT_DIR$/web-html-css/web-html-css.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xml_笔记/xml_笔记.iml" filepath="$PROJECT_DIR$/xml_笔记/xml_笔记.iml" />
-      <module fileurl="file://$PROJECT_DIR$/项目一_图书商城/项目一_图书商城.iml" filepath="$PROJECT_DIR$/项目一_图书商城/项目一_图书商城.iml" />
     </modules>
   </component>
 </project>

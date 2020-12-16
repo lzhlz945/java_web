@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/servlet_jsp/src/main/webapp/page/forEach.jsp" value="file://$PROJECT_DIR$/servlet_jsp/src/main/webapp/page" />
+      </map>
+    </option>
+  </component>
+</project>
