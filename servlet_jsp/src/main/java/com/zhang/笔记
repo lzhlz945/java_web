@@ -198,3 +198,10 @@
 
     8、 读取输入流中全部的数据，复制给输出流，输出给客户端
             IOUtils.copy(resourceAsStream, outputStream);
+
+
+九、请求转发和重定向
+    1、重定向发两次请求，适合curd
+    2、浏览器按f5会发起保存的最后一次请求，使用请求转发会重复发起请求
+    3、req.getServletDispatcher("/+url").forWord.(req,resp);  这个/ 工程路径到工程项目名
+    4、resp.redirect(req.getContextPath+"/+uri");  这个 / 代表到工程的端口号
