@@ -167,3 +167,34 @@
         5.获取请求方法：${ pageContext.request.method }<br>
         6.获取客户端ip地址：${ pageContext.request.remoteHost }<br>
         7.获取会话的id编号：${ pageContext.session.id }<br>
+
+八、文件的下载
+    1、先获取文件的名称
+    2、获取ServletContext
+    3、用ServletContext获取文件的类型getMimeType
+    4、resp.setContextType(文件类型);
+    5、设置响应头提供下载
+             // Content-Disposition响应头，表示收到的数据怎么处理
+            // attachment表示附件，表示下载使用
+            // filename= 表示指定下载的文件名
+            // url编码是把汉字转换成为%xx%xx的格式
+            if (req.getHeader("User-Agent").contains("Firefox")) {
+                // 如果是火狐浏览器使用Base64编码
+                resp.setHeader("Content-Disposition", "attachment; filename==?UTF-8?B?" + new BASE64Encoder().encode("中国.jpg".getBytes("UTF-8")) + "?=");
+            } else {
+                // 如果不是火狐，是IE或谷歌，使用URL编码操作
+                resp.setHeader("Content-Disposition", "attachment; filename=" + URLEncoder.encode("中国.jpg", "UTF-8"));
+            }
+            /**
+             * /斜杠被服务器解析表示地址为http://ip:prot/工程名/  映射 到代码的Web目录
+             */
+    6、获取下载的输入流 用servletContext.getResourceAsStream
+
+            InputStream resourceAsStream = servletContext.getResourceAsStream("/file/" + downloadFileName);
+
+    7、 获取响应的输出流
+            OutputStream outputStream = resp.getOutputStream();
+            //        3、把下载的文件内容回传给客户端
+
+    8、 读取输入流中全部的数据，复制给输出流，输出给客户端
+            IOUtils.copy(resourceAsStream, outputStream);

@@ -27,6 +27,16 @@
     <servlet-name>uploadServlet1</servlet-name>
     <servlet-class>com.zhang.UploadServlet</servlet-class>
   </servlet>
+
+  <servlet>
+    <servlet-name>downPhone1</servlet-name>
+    <servlet-class>com.zhang.DownPhone</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>downPhone1</servlet-name>
+    <url-pattern>/down</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>uploadServlet1</servlet-name>
     <url-pattern>/uploadServlet</url-pattern>
