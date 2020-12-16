@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
 <%
-    String bathPath=request.getScheme()+"://"+ request.getServerName() +":"+request.getServerPort() + request.getContextPath() + "/";
+    String bathPath=request.getScheme()+"://"+ request.getServerName() +":"+ request.getServerPort() + request.getContextPath() + "/";
     request.setAttribute("bathPath",bathPath);
 %>
 <html>

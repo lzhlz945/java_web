@@ -12,8 +12,10 @@ public interface UserService {
     //验证用户名
     boolean existUserName(String username);
 
-    //注册
+    //登录
     User login(User user);
 
 
+    //注册
+    User registUser(User user);
 }

@@ -1,3 +1,10 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
+<%
+
+	String bastPath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath()+"/";
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +12,7 @@
 	<!--写 base 标签，永远固定相对路径跳转的结果-->
 	<base href="http://localhost:8080/book/">
 <title>阅读人生会员注册页面</title>
+	<base href="<%=bastPath%>">
 <link type="text/css" rel="stylesheet" href="static/css/style.css" >
 	<script type="text/javascript" src="static/jQuery/jquery-1.7.2.js"></script>
 	<script type="text/javascript">
@@ -87,9 +95,10 @@
 								<span class="errorMsg"></span>
 							</div>
 							<div class="form">
-								<form action="registerServlet" method="post">
+								<form action="userServlet" method="post">
+									<input type="hidden" name="action" value="regist">
 									<label>用户名称：</label>
-									<input class="itxt" type="text" placeholder="请输入用户名" autocomplete="off" tabindex="1" name="username" id="username" />
+									<input class="itxt" type="text" placeholder="请输入用户名" autocomplete="off" tabindex="1" name="username" id="username" value="${requestScope.username}" />
 									<br />
 									<br />
 									<label>用户密码：</label>
@@ -101,7 +110,7 @@
 									<br />
 									<br />
 									<label>电子邮件：</label>
-									<input class="itxt" type="text" placeholder="请输入邮箱地址" autocomplete="off" tabindex="1" name="email" id="email" />
+									<input class="itxt" type="text" placeholder="请输入邮箱地址" value="${requestScope.email}" autocomplete="off" tabindex="1" name="email" id="email" />
 									<br />
 									<br />
 									<label>验证码：</label>

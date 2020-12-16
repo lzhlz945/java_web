@@ -15,7 +15,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/web-html-css/pom.xml" />
-        <option value="$PROJECT_DIR$/testmaven/pom.xml" />
         <option value="$PROJECT_DIR$/html_js/pom.xml" />
         <option value="$PROJECT_DIR$/html-jQery/pom.xml" />
         <option value="$PROJECT_DIR$/jquery-002/pom.xml" />
