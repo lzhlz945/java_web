@@ -19,11 +19,18 @@
   <listener>
     <listener-class>com.zhang.listener.Listener1</listener-class>
   </listener>
-
   <servlet>
     <servlet-name>jsp1</servlet-name>
     <servlet-class>com.zhang.Jsp1</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>uploadServlet1</servlet-name>
+    <servlet-class>com.zhang.UploadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>uploadServlet1</servlet-name>
+    <url-pattern>/uploadServlet</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>jsp1</servlet-name>
     <url-pattern>/jsp01</url-pattern>

@@ -10,7 +10,6 @@
         <module name="001-servlet" />
         <module name="jquery-002" />
         <module name="html_js" />
-        <module name="testmaven" />
         <module name="html-jQery" />
         <module name="book_tow" />
         <module name="servlet_jsp" />
@@ -24,6 +23,7 @@
       <module name="html_js" target="1.8" />
       <module name="jquery-002" target="1.8" />
       <module name="servlet_jsp" target="1.8" />
+      <module name="test-maven" target="1.7" />
       <module name="testmaven" target="1.7" />
       <module name="web-html-css" target="1.8" />
     </bytecodeTargetLevel>

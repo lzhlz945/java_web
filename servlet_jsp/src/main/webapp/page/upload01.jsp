@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
 <%
-    String bathPath=request.getScheme()+"://"+ request.getServerName() + request.getServerPort() + request.getContextPath() + "/";
+    String bathPath=request.getScheme()+"://"+ request.getServerName() +":"+ request.getServerPort() + request.getContextPath() + "/";
     request.setAttribute("bathPath",bathPath);
 %>
 <html>
@@ -17,7 +17,7 @@
     头像：<input type="file" name="photo" > <br>
     <input type="submit" value="上传"> </form>--%>
 
-   <form action="" method="post" enctype="multipart/form-data">
+   <form action="uploadServlet" method="post" enctype="multipart/form-data">
        <input type="text" name="name" value="输入名字" /><br/>
        <input type="file" name="phone" ><br/>
        <input type="submit" value="上传">
