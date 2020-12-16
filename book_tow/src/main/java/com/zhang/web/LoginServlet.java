@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
@@ -28,9 +29,11 @@ public class LoginServlet extends HttpServlet {
         User user=service.login(new User(null,username,password,null));
         if(user == null){
             System.out.println("用户不存在");
-            request.getRequestDispatcher("/pages/user/login.html").forward(request,response);
+
+            request.setAttribute("msg","用户不存在或者，账号密码错误");
+            request.getRequestDispatcher("/pages/user/login.jsp").forward(request,response);
         }else {
-            request.getRequestDispatcher("/pages/user/login_success.html").forward(request,response);
+            request.getRequestDispatcher("/pages/user/login_success.jsp").forward(request,response);
         }
     }
 

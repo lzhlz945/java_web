@@ -14,4 +14,6 @@ public interface UserDao {
 
 
     User login(User user);
+
+    User registerUser(User user);
 }

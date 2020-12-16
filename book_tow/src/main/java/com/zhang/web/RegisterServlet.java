@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
@@ -32,16 +33,21 @@ public class RegisterServlet extends HttpServlet {
         if("abcd".equalsIgnoreCase(code)){
            if(userService.existUserName(username)){
                System.out.println("用户名已存在！");
-               request.getRequestDispatcher("/pages/user/regist.html").forward(request,response);
+               HttpSession session = request.getSession();
+               session.setAttribute("msg","该用户已被注册！");
+               request.getRequestDispatcher("/pages/user/regist.jsp").forward(request,response);
 
            }else {
-               request.getRequestDispatcher("/pages/user/regist_success.html").forward(request,response);
+               User user1=userService.registUser(new User(null, username, password, email));
+               request.getRequestDispatcher("/pages/user/regist_success.jsp").forward(request,response);
            }
 
 
        }else {
            System.out.println("验证码：+【"+code+"】"+"错误！");
-           request.getRequestDispatcher("/pages/user/regist.html").forward(request,response);
+            HttpSession session = request.getSession();
+            session.setAttribute("msg","验证码：+【"+code+"】"+"错误！");
+           request.getRequestDispatcher("/pages/user/regist.jsp").forward(request,response);
        }
 
     }

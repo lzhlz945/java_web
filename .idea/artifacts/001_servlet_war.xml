@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="001-servlet:war">
+  <artifact type="war" build-on-make="true" name="001-servlet:war">
     <output-path>$PROJECT_DIR$/001-servlet/target</output-path>
     <properties id="maven-jee-properties">
       <options>

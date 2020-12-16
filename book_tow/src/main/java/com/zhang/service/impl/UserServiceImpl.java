@@ -12,8 +12,10 @@ import com.zhang.service.UserService;
  * @date:2020/12/14
  */
 public class UserServiceImpl implements UserService {
-    //验证用户名
+
     private UserDao userDao=new UserDaoImpl();
+
+    //验证用户名
     @Override
     public boolean existUserName(String username) {
 
@@ -23,9 +25,15 @@ public class UserServiceImpl implements UserService {
         return  true;
     }
 
-    //注册
+    //登录
     @Override
     public User login(User user) {
         return userDao.login(user);
+    }
+
+    //注册
+    @Override
+    public User registUser(User user) {
+      return   userDao.registerUser(user);
     }
 }
