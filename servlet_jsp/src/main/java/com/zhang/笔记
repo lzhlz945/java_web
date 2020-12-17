@@ -205,3 +205,7 @@
     2、浏览器按f5会发起保存的最后一次请求，使用请求转发会重复发起请求
     3、req.getServletDispatcher("/+url").forWord.(req,resp);  这个/ 工程路径到工程项目名
     4、resp.redirect(req.getContextPath+"/+uri");  这个 / 代表到工程的端口号
+
+
+十、book index利用jsp请求转发标签把这个页面的数据请求他其他页面
+   <jsp:forward page="/manager/bookServlet?action=indexPage"></jsp:forward>

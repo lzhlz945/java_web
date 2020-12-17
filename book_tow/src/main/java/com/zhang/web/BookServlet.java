@@ -32,6 +32,15 @@ public class BookServlet extends BaseServlet{
        req.getRequestDispatcher("/pages/manager/book_manager.jsp").forward(req,resp);
 
     }
+    protected void indexPage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int pageNo = WebUtils.parseInt(req.getParameter("pageNo"), 1);
+        int pageSize = WebUtils.parseInt(req.getParameter("pageSize"),Page.PAGE_SIZE);
+       Page<Book> indexPage=bookService.page(pageNo,pageSize);
+
+       req.setAttribute("indexPage",indexPage);
+       req.getRequestDispatcher("/pages/client/index.jsp").forward(req,resp);
+
+    }
     protected void delete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        1、获取请求的参数id，图书编程
         int id = WebUtils.parseInt(req.getParameter("id"), 0);
