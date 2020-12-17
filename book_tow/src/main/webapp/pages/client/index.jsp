@@ -28,7 +28,7 @@
 	<div id="main">
 		<div id="book">
 			<div class="book_cond">
-				<form action="client/bookServlet" method="get">
+				<form action="manager/bookServlet" method="get">
 					<input type="hidden" name="action" value="pageByPrice">
 					价格：<input id="min" type="text" name="min" value="${param.min}"> 元 -
 						<input id="max" type="text" name="max" value="${param.max}"> 元
@@ -77,14 +77,18 @@
 		</div>
 
 		<div id="page_nav">
-			<a href="#">首页</a>
-			<a href="#">上一页</a>
+			<c:if test="${requestScope.indexPage.pageNo >1}">
+			<a href="manager/bookServlet?action=indexPage&pageNo=1">首页</a>
+			<a href="manager/bookServlet?action=indexPage&pageNo=${requestScope.indexPage.pageNo -1}">上一页</a>
+			</c:if>
 			<a href="#">3</a>
-			【4】
+			【${ requestScope.indexPage.pageNo }】
 			<a href="#">5</a>
-			<a href="#">下一页</a>
-			<a href="#">末页</a>
-			共10页，30条记录 到第<input value="4" name="pn" id="pn_input"/>页
+			<c:if test="${requestScope.indexPage.pageNo < requestScope.indexPage.pageTotal}">
+			<a href="manager/bookServlet?action=indexPage&pageNo=${requestScope.indexPage.pageNo +1}">下一页</a>
+			<a href="manager/bookServlet?action=indexPage&pageNo=${requestScope.indexPage.pageTotal }">末页</a>
+			</c:if>
+			共${ requestScope.indexPage.pageTotal }页，${ requestScope.indexPage.pageTotalCount }条记录 到第<input value="${requestScope.indexPage.pageNo}" name="pn" id="pn_input"/>页
 			<input type="button" value="确定">
 		</div>
 
