@@ -8,6 +8,9 @@
     <file type="web" url="file://$PROJECT_DIR$/servlet_jsp" />
     <file type="web" url="file://$PROJECT_DIR$/web-html-css" />
   </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>

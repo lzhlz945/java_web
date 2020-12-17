@@ -168,6 +168,7 @@
         6.获取客户端ip地址：${ pageContext.request.remoteHost }<br>
         7.获取会话的id编号：${ pageContext.session.id }<br>
 
+
 八、文件的下载
     1、先获取文件的名称
     2、获取ServletContext
@@ -209,3 +210,5 @@
 
 十、book index利用jsp请求转发标签把这个页面的数据请求他其他页面
    <jsp:forward page="/manager/bookServlet?action=indexPage"></jsp:forward>
+
+
