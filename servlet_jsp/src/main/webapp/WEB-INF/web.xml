@@ -24,8 +24,24 @@
     <servlet-name>jsp1</servlet-name>
     <servlet-class>com.zhang.Jsp1</servlet-class>
   </servlet>
+
+  <servlet>
+    <servlet-name>uploadServlet1</servlet-name>
+    <servlet-class>com.zhang.UploadServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>downPhone1</servlet-name>
+    <servlet-class>com.zhang.DownPhone</servlet-class>
+  </servlet>
+
   <servlet-mapping>
-    <servlet-name>jsp1</servlet-name>
-    <url-pattern>/jsp01</url-pattern>
+    <servlet-name>downPhone1</servlet-name>
+    <url-pattern>/down</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>uploadServlet1</servlet-name>
+    <url-pattern>/uploadServlet</url-pattern>
+  </servlet-mapping>
+
 </web-app>

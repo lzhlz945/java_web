@@ -168,17 +168,47 @@
         6.获取客户端ip地址：${ pageContext.request.remoteHost }<br>
         7.获取会话的id编号：${ pageContext.session.id }<br>
 
-八、文件的上传
 
-    1、要有一个 form 标签，method=post 请求
-    2、form 标签的 encType 属性值必须为 multipart/form-data 值
-    3、在 form 标签中使用 input type=file 添加上传的文件
-    4、编写服务器代码（Servlet 程序）接收，处理上传的数据。
+八、文件的下载
+    1、先获取文件的名称
+    2、获取ServletContext
+    3、用ServletContext获取文件的类型getMimeType
+    4、resp.setContextType(文件类型);
+    5、设置响应头提供下载
+             // Content-Disposition响应头，表示收到的数据怎么处理
+            // attachment表示附件，表示下载使用
+            // filename= 表示指定下载的文件名
+            // url编码是把汉字转换成为%xx%xx的格式
+            if (req.getHeader("User-Agent").contains("Firefox")) {
+                // 如果是火狐浏览器使用Base64编码
+                resp.setHeader("Content-Disposition", "attachment; filename==?UTF-8?B?" + new BASE64Encoder().encode("中国.jpg".getBytes("UTF-8")) + "?=");
+            } else {
+                // 如果不是火狐，是IE或谷歌，使用URL编码操作
+                resp.setHeader("Content-Disposition", "attachment; filename=" + URLEncoder.encode("中国.jpg", "UTF-8"));
+            }
+            /**
+             * /斜杠被服务器解析表示地址为http://ip:prot/工程名/  映射 到代码的Web目录
+             */
+    6、获取下载的输入流 用servletContext.getResourceAsStream
 
-    步骤：1、判断是不是分段文件
-         2、得到FileItemFactory 的实现类DiskFileItemFactory
-         3、new ServletFileUpload
-         4、parse解析传输过来的生成一个list
-         5、遍历list
-         6、判断是不是普通表单
-         7、getFieldName getString("UTF-8") getName()
+            InputStream resourceAsStream = servletContext.getResourceAsStream("/file/" + downloadFileName);
+
+    7、 获取响应的输出流
+            OutputStream outputStream = resp.getOutputStream();
+            //        3、把下载的文件内容回传给客户端
+
+    8、 读取输入流中全部的数据，复制给输出流，输出给客户端
+            IOUtils.copy(resourceAsStream, outputStream);
+
+
+九、请求转发和重定向
+    1、重定向发两次请求，适合curd
+    2、浏览器按f5会发起保存的最后一次请求，使用请求转发会重复发起请求
+    3、req.getServletDispatcher("/+url").forWord.(req,resp);  这个/ 工程路径到工程项目名
+    4、resp.redirect(req.getContextPath+"/+uri");  这个 / 代表到工程的端口号
+
+
+十、book index利用jsp请求转发标签把这个页面的数据请求他其他页面
+   <jsp:forward page="/manager/bookServlet?action=indexPage"></jsp:forward>
+
+

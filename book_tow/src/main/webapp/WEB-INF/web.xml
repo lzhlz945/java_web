@@ -21,10 +21,19 @@
     <servlet-name>registerServlet1</servlet-name>
     <url-pattern>/registerServlet</url-pattern>
   </servlet-mapping>-->
+
+  <servlet>
+    <servlet-name>BookServlet</servlet-name>
+    <servlet-class>com.zhang.web.BookServlet</servlet-class>
+  </servlet>
   <servlet>
     <servlet-name>userServlet</servlet-name>
     <servlet-class>com.zhang.web.UserServlet</servlet-class>
   </servlet>
+  <servlet-mapping>
+    <servlet-name>BookServlet</servlet-name>
+    <url-pattern>/manager/bookServlet</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>userServlet</servlet-name>
     <url-pattern>/userServlet</url-pattern>
