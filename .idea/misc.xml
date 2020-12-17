@@ -3,6 +3,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/001-servlet" />
     <file type="web" url="file://$PROJECT_DIR$/book_tow" />
+    <file type="web" url="file://$PROJECT_DIR$/cookie-session" />
     <file type="web" url="file://$PROJECT_DIR$/html-jQery" />
     <file type="web" url="file://$PROJECT_DIR$/html_js" />
     <file type="web" url="file://$PROJECT_DIR$/servlet_jsp" />
@@ -22,6 +23,7 @@
         <option value="$PROJECT_DIR$/项目_二阶段/pom.xml" />
         <option value="$PROJECT_DIR$/book_tow/pom.xml" />
         <option value="$PROJECT_DIR$/servlet_jsp/pom.xml" />
+        <option value="$PROJECT_DIR$/cookie-session/pom.xml" />
       </list>
     </option>
   </component>

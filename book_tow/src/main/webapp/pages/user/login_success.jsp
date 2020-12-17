@@ -28,9 +28,9 @@ request.setAttribute("bastPath",bastPath);
 		<div id="header">
 				<img class="logo_img" alt="" src="static/img/logo.jpg" >
 				<div>
-					<span>欢迎${bastPath}<span class="um_span">张总</span>光临阅读人生书城</span>
+					<span>欢迎${sessionScope.user.username}<span class="um_span"></span>光临阅读人生书城</span>
 					<a href="../order/order.html">我的订单</a>
-					<a href="index.html">注销</a>&nbsp;&nbsp;
+					<a href="userServlet?action=destroySession">注销</a>&nbsp;&nbsp;
 					<a href="index.html">返回</a>
 				</div>
 		</div>

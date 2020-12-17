@@ -8,10 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="001-servlet" />
-        <module name="jquery-002" />
-        <module name="html_js" />
-        <module name="html-jQery" />
         <module name="book_tow" />
+        <module name="cookie-session" />
+        <module name="html-jQery" />
+        <module name="html_js" />
+        <module name="jquery-002" />
         <module name="servlet_jsp" />
         <module name="web-html-css" />
       </profile>
@@ -19,6 +20,7 @@
     <bytecodeTargetLevel>
       <module name="001-servlet" target="1.8" />
       <module name="book_tow" target="1.8" />
+      <module name="cookie-session" target="1.8" />
       <module name="html-jQery" target="1.8" />
       <module name="html_js" target="1.8" />
       <module name="jquery-002" target="1.8" />
