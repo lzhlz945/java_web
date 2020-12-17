@@ -1,9 +1,17 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>书城首页</title>
-<link type="text/css" rel="stylesheet" href="static/css/style.css" >
+	<%@ include file="/pages/common/head.jsp"%>
+	<script type="text/javascript">
+		/*$(function () {
+			window.location.href="${basePath}"+"manager/bookServlet?action=page&pageNo=1&pageSize=4";
+			alert(location)
+		})*/
+
+	</script>
 </head>
 <body>
 	

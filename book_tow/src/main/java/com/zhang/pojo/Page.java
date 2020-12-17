@@ -35,7 +35,7 @@ public class Page<T> {
 
     public void setPageNo(Integer pageNo) {
         /* 数据边界的有效检查 */
-  /*      if (pageNo < 1) {
+       /* if (pageNo < 1) {
             pageNo = 1;
         }
         if (pageNo > pageTotal) {

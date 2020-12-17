@@ -45,24 +45,24 @@ public class BookServiceImpl implements BookService {
     //分页操作
     @Override
     public Page<Book> page(int pageNo, int pageSize) {
-
+        if(pageNo < 1){
+            pageNo=1;
+        }
         //获取总计数
         int count=bookDao.getCount();
-        int begin=(pageNo-1)*pageSize;
-        //获取分页数据items
-        List<Book> bookList= bookDao.getItems(begin,pageSize);
+
 
         int pageTotal=count/pageSize;
         if(count % pageSize > 1){
 
             pageTotal+=1;
         }
-        if(pageNo < 1){
-            pageNo=1;
-        }
         if(pageNo > pageTotal){
             pageNo=pageTotal;
         }
+        int begin=(pageNo-1)*pageSize;
+        //获取分页数据items
+        List<Book> bookList= bookDao.getItems(begin,pageSize);
         Page<Book> page = new Page<>();
         page.setPageNo(pageNo);
         page.setPageSize(pageSize);

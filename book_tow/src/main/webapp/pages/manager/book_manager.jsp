@@ -9,11 +9,28 @@
 	<%@ include file="/pages/common/head.jsp"%>
 <script>
     $(function () {
-        $("#qd").click(function () {
-            var s=$("#pn_input").val();
-            window.location.href="${basePath}"+"manager/bookServlet?action=page&pageNo="+s+"&pageSize=4";
-        })
+		$("a.aClass").click(function () {
+
+			if(!confirm("确定删除吗？")){
+				return false;
+			}
+
+		})
+    	$(document).keydown(function (event) {
+			if(event.keyCode==13){
+				
+				fun1();
+			}
+		})
+		$("#qd").click(function () {
+          fun1();
+		})
     })
+
+	function fun1() {
+		var s=$("#pn_input").val();
+		window.location.href="${basePath}"+"manager/bookServlet?action=page&pageNo="+s+"&pageSize=4";
+	}
 </script>
 </head>
 <body>
@@ -46,8 +63,8 @@
 				<td>${book.author}</td>
 				<td>${book.sales}</td>
 				<td>${book.stock}</td>
-				<td><a href="manager/bookServlet?action=getBook&id=${book.id}">修改</a></td>
-				<td><a href="manager/bookServlet?action=delete&id=${book.id}">删除</a></td>
+				<td><a href="manager/bookServlet?action=getBook&id=${book.id}&pageNo=${requestScope.page.pageNo}">修改</a></td>
+				<td><a class="aClass" href="manager/bookServlet?action=delete&id=${book.id}&pageNo=${requestScope.page.pageNo}">删除</a></td>
 			</tr>
 	</c:forEach>
 			<tr>
