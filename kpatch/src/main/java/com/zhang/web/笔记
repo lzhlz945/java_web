@@ -7,3 +7,13 @@
       <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/kaptcha-2.3.2.jar</systemPath>
     </dependency>
     步骤：groupId、artifactId、version、scope(system) systemPath
+
+二、 导入验证码的步骤
+     1、导入jar包
+     2、书写xml中servlet 把jar包的servlet的mapping改为/kapatcha.jpg
+     3、servlet类中 写 String token = (String) session.getAttribute(KAPTCHA_SESSION_KEY);
+                          session.removeAttribute(KAPTCHA_SESSION_KEY);
+     4、前端在a标签的src中 src="kapatcha.jpg "  style=""
+     5、点击图片实现变换
+        获取a标签的src this 是指当前的document对象就是指a标签
+        this.src="${bathPath}/kapatcha.jpg?d="+new Date();

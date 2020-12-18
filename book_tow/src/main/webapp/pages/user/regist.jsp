@@ -1,22 +1,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" %>
-<%
 
-	String bastPath=request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath()+"/";
-
-%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 	<!--写 base 标签，永远固定相对路径跳转的结果-->
-	<base href="http://localhost:8080/book/">
+
 <title>阅读人生会员注册页面</title>
-	<base href="<%=bastPath%>">
+	<%@ include file="/pages/common/head.jsp"%>
 <link type="text/css" rel="stylesheet" href="static/css/style.css" >
 	<script type="text/javascript" src="static/jQuery/jquery-1.7.2.js"></script>
 	<script type="text/javascript">
 		$(function () {
+			$("#code_img").click(function () {
+				this.src="${bathPath}kaptcha.jpg?d="+new Date();
+
+			})
 			//绑定注册按钮
 			$("#sub_btn").click(function () {
 
@@ -113,9 +113,12 @@
 									<input class="itxt" type="text" placeholder="请输入邮箱地址" value="${requestScope.email}" autocomplete="off" tabindex="1" name="email" id="email" />
 									<br />
 									<br />
+									<%--<label>验证码：</label>
+									<input class="itxt" type="text" style="width: 100px;" id="code" name="code"/>
+									<img alt="" src="kaptcha.jpg" style="float: right; margin-right: 40px">--%>
 									<label>验证码：</label>
-									<input class="itxt" type="text" style="width: 150px;" id="code" name="code"/>
-									<img alt="" src="static/img/code.bmp" style="float: right; margin-right: 40px">
+									<input class="itxt" type="text" name="code" style="width: 80px;" id="code" />
+									<img id="code_img" alt="" src="kaptcha.jpg" style="float: right; margin-right: 40px; width: 110px; height: 30px;">
 									<br />
 									<br />
 									<input type="submit" value="注册" id="sub_btn" />

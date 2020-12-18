@@ -30,6 +30,14 @@
     <servlet-name>userServlet</servlet-name>
     <servlet-class>com.zhang.web.UserServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>KaptchaServlet</servlet-name>
+    <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>KaptchaServlet</servlet-name>
+    <url-pattern>/kaptcha.jpg</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>BookServlet</servlet-name>
     <url-pattern>/manager/bookServlet</url-pattern>
