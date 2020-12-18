@@ -6,6 +6,7 @@
     <file type="web" url="file://$PROJECT_DIR$/cookie-session" />
     <file type="web" url="file://$PROJECT_DIR$/html-jQery" />
     <file type="web" url="file://$PROJECT_DIR$/html_js" />
+    <file type="web" url="file://$PROJECT_DIR$/kpatch" />
     <file type="web" url="file://$PROJECT_DIR$/servlet_jsp" />
     <file type="web" url="file://$PROJECT_DIR$/web-html-css" />
   </component>
@@ -24,6 +25,7 @@
         <option value="$PROJECT_DIR$/book_tow/pom.xml" />
         <option value="$PROJECT_DIR$/servlet_jsp/pom.xml" />
         <option value="$PROJECT_DIR$/cookie-session/pom.xml" />
+        <option value="$PROJECT_DIR$/kpatch/pom.xml" />
       </list>
     </option>
   </component>

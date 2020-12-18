@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="kpatch:war">
+    <output-path>$PROJECT_DIR$/kpatch/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>kpatch</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="kpatch-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="kpatch:war exploded" />
+    </root>
+  </artifact>
+</component>

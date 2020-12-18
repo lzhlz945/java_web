@@ -1,0 +1,12 @@
+resp.setHeader("Referer") ,获取当前浏览器的请求地址
+利用重定向 返回原来的页面相当于自动刷新
+
+attr
+
+   <button id="xx" bookId="${xx}" />
+
+   获取这个bookId
+   $(this).attr("bookId");
+
+
+this 指当前标签对象

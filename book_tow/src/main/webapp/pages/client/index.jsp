@@ -9,7 +9,15 @@
 
 	<%-- 静态包含 base标签、css样式、jQuery文件 --%>
 	<%@ include file="/pages/common/head.jsp"%>
+<script type="text/javascript">
+	$(function () {
+		$("button.cart_btn").click(function () {
+			var id=$(this).attr("bookId");
+			window.location.href="${bathPath}items?action=addItems&id="+id;
+		})
+	})
 
+</script>
 
 </head>
 <body>
@@ -69,7 +77,7 @@
 						<span class="sp2">${book.stock}</span>
 					</div>
 					<div class="book_add">
-						<button>加入购物车</button>
+						<button class="cart_btn" bookId="${book.id}">加入购物车</button>
 					</div>
 				</div>
 			</div>
