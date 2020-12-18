@@ -41,10 +41,8 @@ public class ItemsServlet extends BaseServlet {
         req.getSession().setAttribute("lastName", cartItem.getName());
 
         // 重定向回原来商品所在的地址页面
-//        resp.sendRedirect(req.getHeader("Referer"));
-
-        resp.sendRedirect(req.getContextPath());
-
+        resp.sendRedirect(req.getHeader("Referer"));
+        System.out.println(req.getHeader("Referer"));
 
 
     }
