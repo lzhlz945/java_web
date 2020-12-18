@@ -17,3 +17,7 @@
      5、点击图片实现变换
         获取a标签的src this 是指当前的document对象就是指a标签
         this.src="${bathPath}/kapatcha.jpg?d="+new Date();
+
+
+浏览器缓存：
+    浏览器缓存是由最后的资源名和请求参数组成，
