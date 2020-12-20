@@ -2,6 +2,7 @@ package com.zhang.JdbcUtils;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
+import com.alibaba.druid.pool.DruidPooledConnection;
 
 
 import java.io.InputStream;
@@ -15,6 +16,7 @@ public class JdbcUtils {
 
     private static DruidDataSource dataSource;
 
+    private static ThreadLocal<Connection> con1=new ThreadLocal<Connection>();
     static {
         try {
             Properties properties = new Properties();
@@ -38,44 +40,25 @@ public class JdbcUtils {
      */
     public static Connection getConnection(){
 
-        Connection conn = null;
+        Connection con = con1.get();
+        if(con == null){
 
-        try {
-            conn = dataSource.getConnection();
-        } catch (Exception e) {
-            e.printStackTrace();
+            try {
+                DruidPooledConnection connection = dataSource.getConnection();
+                connection.setAutoCommit(false); //设置为自动提交
+                con1.set(connection);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
-        return conn;
+        return con;
     }
 
     /**
-     * 关闭连接，放回数据库连接池
+     * 提交事务并 ，关闭连接
      * @param conn
      */
     public static void close(ResultSet rs, PreparedStatement ps ,Connection conn) {
-        if (ps != null) {
-            try {
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        if (conn != null) {
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        if (rs != null) {
-            try {
-                rs.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-
-        }
 
     }
 
