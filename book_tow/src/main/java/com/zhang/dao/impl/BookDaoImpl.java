@@ -14,29 +14,29 @@ import java.util.List;
  * @date:2020/12/16
  */
 public class BookDaoImpl extends BaseDao implements BookDao {
-    private static Connection con=JdbcUtils.getConnection();
+
     @Override
     public void addBook(Book book) {
         String sql = "insert into t_book(`name`,`author`,`price`,`sales`,`stock`,`img_path`) values(?,?,?,?,?,?)";
-        commonsUpdate(con,sql,book.getName(),book.getAuthor(),book.getPrice(),book.getSales(),book.getStock(),book.getImgPath());
+        commonsUpdate(sql,book.getName(),book.getAuthor(),book.getPrice(),book.getSales(),book.getStock(),book.getImgPath());
     }
 
     @Override
     public void deleteBookById(Integer id) {
         String sql = "delete from t_book where id = ?";
-        commonsUpdate(con,sql,id);
+        commonsUpdate(sql,id);
     }
 
     @Override
     public void updateBook(Book book) {
         String sql = "update t_book set `name`=?,`author`=?,`price`=?,`sales`=?,`stock`=?,`img_path`=? where id = ?";
-        commonsUpdate(con,sql,book.getName(),book.getAuthor(),book.getPrice(),book.getSales(),book.getStock(),book.getImgPath(),book.getId());
+        commonsUpdate(sql,book.getName(),book.getAuthor(),book.getPrice(),book.getSales(),book.getStock(),book.getImgPath(),book.getId());
     }
 
     @Override
     public Book queryBookById(Integer id) {
         String sql = "select `id` , `name` , `author` , `price` , `sales` , `stock` , `img_path` imgPath from t_book where id = ?";
-        Book book = selectObject(con, sql, Book.class, id);
+        Book book = selectObject(sql, Book.class, id);
         return book;
 
     }
@@ -45,7 +45,7 @@ public class BookDaoImpl extends BaseDao implements BookDao {
     public List<Book> queryBooks() {
         String sql = "select `id` , `name` , `author` , `price` , `sales` , `stock` , `img_path` imgPath from t_book";
 
-        return selectList(con,sql,Book.class);
+        return selectList(sql,Book.class);
     }
 
     @Override
@@ -59,7 +59,7 @@ public class BookDaoImpl extends BaseDao implements BookDao {
     public List<Book> getItems(int begin, int pageSize) {
         String sql = "select `id` , `name` , `author` , `price` , `sales` , `stock` , `img_path` imgPath from t_book limit ?,?";
 
-        List<Book> bookList = selectList(con, sql, Book.class, begin, pageSize);
+        List<Book> bookList = selectList(sql, Book.class, begin, pageSize);
         return bookList;
 
     }
