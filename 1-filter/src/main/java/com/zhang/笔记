@@ -32,3 +32,11 @@ filterChain.doFilter(servletRequest,servletResponse);
    第 3 步，每次拦截到请求，就会执行
    4、destroy 销毁
    第 4 步，停止 web 工程的时候，就会执行（停止 web 工程，也会销毁 Filter 过滤器）
+
+三、FilterConfig 类
+  FilterConfig 类见名知义，它是 Filter 过滤器的配置文件类。
+  Tomcat 每次创建 Filter 的时候，也会同时创建一个 FilterConfig 类，这里包含了 Filter 配置文件的配置信息。
+  FilterConfig 类的作用是获取 filter 过滤器的配置内容
+  1、获取 Filter 的名称 filter-name 的内容
+  2、获取在 Filter 中配置的 init-param 初始化参数
+  3、获取 ServletContext 对象
