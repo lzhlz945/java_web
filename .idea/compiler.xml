@@ -16,6 +16,8 @@
         <module name="jquery-002" />
         <module name="kpatch" />
         <module name="servlet_jsp" />
+        <module name="theadLocal01" />
+        <module name="threadLocal-0" />
         <module name="web-html-css" />
       </profile>
     </annotationProcessing>
@@ -33,6 +35,9 @@
       <module name="servlet_jsp" target="1.8" />
       <module name="test-maven" target="1.7" />
       <module name="testmaven" target="1.7" />
+      <module name="theadLocal-001" target="1.5" />
+      <module name="theadLocal01" target="1.5" />
+      <module name="threadLocal-0" target="1.7" />
       <module name="web-html-css" target="1.8" />
     </bytecodeTargetLevel>
   </component>

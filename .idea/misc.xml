@@ -9,6 +9,7 @@
     <file type="web" url="file://$PROJECT_DIR$/html_js" />
     <file type="web" url="file://$PROJECT_DIR$/kpatch" />
     <file type="web" url="file://$PROJECT_DIR$/servlet_jsp" />
+    <file type="web" url="file://$PROJECT_DIR$/threadLocal-0" />
     <file type="web" url="file://$PROJECT_DIR$/web-html-css" />
   </component>
   <component name="JavaScriptSettings">
@@ -29,6 +30,8 @@
         <option value="$PROJECT_DIR$/kpatch/pom.xml" />
         <option value="$PROJECT_DIR$/001-filter/pom.xml" />
         <option value="$PROJECT_DIR$/1-filter/pom.xml" />
+        <option value="$PROJECT_DIR$/theadLocal01/pom.xml" />
+        <option value="$PROJECT_DIR$/threadLocal-0/pom.xml" />
       </list>
     </option>
   </component>

@@ -1,9 +1,9 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_0.xsd">
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+<display-name>Archetype Created Web Application</display-name>
 
 <!--  <servlet>
     <servlet-name>registerServlet1</servlet-name>
@@ -39,6 +39,11 @@
     <servlet-name>cart</servlet-name>
     <servlet-class>com.zhang.web.ItemsServlet</servlet-class>
   </servlet>
+    <filter>
+        <filter-name>filter1</filter-name>
+        <filter-class>com.zhang.filter.CommonsFilter</filter-class>
+    </filter>
+
 
   <servlet-mapping>
     <servlet-name>cart</servlet-name>
@@ -56,4 +61,9 @@
     <servlet-name>userServlet</servlet-name>
     <url-pattern>/userServlet</url-pattern>
   </servlet-mapping>
+
+    <filter-mapping>
+        <filter-name>filter1</filter-name>
+        <url-pattern>/pages/manager/*</url-pattern>
+    </filter-mapping>
 </web-app>

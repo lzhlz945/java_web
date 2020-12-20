@@ -31,6 +31,8 @@ public class LoginServlet extends HttpServlet {
             System.out.println("用户不存在");
 
             request.setAttribute("msg","用户不存在或者，账号密码错误");
+            HttpSession session = request.getSession();
+            session.setAttribute("user",user);
             request.getRequestDispatcher("/pages/user/login.jsp").forward(request,response);
         }else {
             request.getRequestDispatcher("/pages/user/login_success.jsp").forward(request,response);
