@@ -40,3 +40,19 @@ filterChain.doFilter(servletRequest,servletResponse);
   1、获取 Filter 的名称 filter-name 的内容
   2、获取在 Filter 中配置的 init-param 初始化参数
   3、获取 ServletContext 对象
+
+四、Filter 的拦截路径
+  --精确匹配 精确匹配
+  <url-pattern>/target.jsp</url-pattern>
+  以上配置的路径，表示请求地址必须为：http://ip:port/工程路径/target.jsp
+  --目录匹配 目录匹配
+  <url-pattern>/admin/*</url-pattern>
+  以上配置的路径，表示请求地址必须为：http://ip:port/工程路径/admin/*
+  --后缀名匹配 后缀名匹配
+  <url-pattern>*.html</url-pattern>
+  以上配置的路径，表示请求地址必须以.html 结尾才会拦截到
+  <url-pattern>*.do</url-pattern>
+  以上配置的路径，表示请求地址必须以.do 结尾才会拦截到
+  <url-pattern>*.action</url-pattern>
+  以上配置的路径，表示请求地址必须以.action 结尾才会拦截到
+  Filter 过滤器它只关心请求的地址是否匹配，不关心请求的资源是否存在！！！
