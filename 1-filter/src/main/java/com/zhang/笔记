@@ -1,0 +1,24 @@
+一 、Filter 什么是过滤器
+    1、Filter 过滤器它是 JavaWeb 的三大组件之一。三大组件分别是：Servlet 程序、Listener 监听器、Filter 过滤器
+    2、Filter 过滤器它是 JavaEE 的规范。也就是接口
+    3、Filter 过滤器它的作用是： 拦截请求，过滤响应。
+    拦截请求常见的应用场景有：
+    1、权限检查
+    2、日记操作
+    3、事务管理
+    ……等等
+
+
+ else {
+// 让程序继续往下访问用户的目标资源
+filterChain.doFilter(servletRequest,servletResponse);
+}
+<filter-mapping>
+<!--filter-name 表示当前的拦截路径给哪个 filter 使用 -->
+<filter-name>AdminFilter</filter-name>
+<!--url-pattern 配置拦截路径
+/ 表示请求地址为： http://ip:port/ 工程路径 / 映射到 IDEA 的 web 目录
+/admin/* 表示请求地址为： http://ip:port/ 工程路径 /admin/*
+-->
+<url-pattern>/admin/*</url-pattern>
+</filter-mapping>

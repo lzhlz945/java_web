@@ -8,16 +8,3 @@ attr
    获取这个bookId
    $(this).attr("bookId");
 
-
-this 指当前标签对象
-
-
-一、Filter 什么是过滤器
-   1、Filter 过滤器它是 JavaWeb 的三大组件之一。三大组件分别是：Servlet 程序、Listener 监听器、Filter 过滤器
-   2、Filter 过滤器它是 JavaEE 的规范。也就是接口
-   3、Filter 过滤器它的作用是： 拦截请求，过滤响应。
-   拦截请求常见的应用场景有：
-   1、权限检查
-   2、日记操作
-   3、事务管理
-   ……等等
