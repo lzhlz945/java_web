@@ -22,3 +22,13 @@ filterChain.doFilter(servletRequest,servletResponse);
 -->
 <url-pattern>/admin/*</url-pattern>
 </filter-mapping>
+
+二、Filter 的生命周期
+   Filter 的生命周期包含几个方法
+   1、构造器方法
+   2、init 初始化方法
+   第 1，2 步，在 web 工程启动的时候执行（Filter 已经创建）
+   3、doFilter 过滤方法
+   第 3 步，每次拦截到请求，就会执行
+   4、destroy 销毁
+   第 4 步，停止 web 工程的时候，就会执行（停止 web 工程，也会销毁 Filter 过滤器）
