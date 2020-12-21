@@ -6,7 +6,9 @@ import com.zhang.proj.Person;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author: create by zhl
@@ -42,8 +44,20 @@ public class TestJson {
         }.getType());
         System.out.println(listPerson);
     }
+
+    //json和map互转
     @Test
     public void test03(){
 
+        Map<Integer,Person> map=new HashMap<Integer, Person>();
+        map.put(1,new Person(1,"zxc1"));
+        map.put(2,new Person(2,"zxc2"));
+
+        Gson gson=new Gson();
+        String json = gson.toJson(map);
+        System.out.println(json);
+        Map<Integer,Person>  map1 = gson.fromJson(json, new TypeToken<HashMap<Integer, Person>>() {
+        }.getType());
+        System.out.println(map1);
     }
 }
