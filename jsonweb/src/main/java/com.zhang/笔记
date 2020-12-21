@@ -25,3 +25,7 @@
    一种是：字符串的形式存在，我们叫它 json 字符串。 一般我们要操作 json 中的数据的时候，需要 json 对象的格式。
    一般我们要在客户端和服务器之间进行数据交换的时候，使用 json 字符串。
    JSON.stringify() 把 json 对象转换成为 json 字符串 JSON.parse() 把 json 字符串转换成为 json 对象
+
+
+四、JSON 在 java 中的使用
+    1、javaBean 和 json 的互转
