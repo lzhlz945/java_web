@@ -29,3 +29,25 @@
 
 四、JSON 在 java 中的使用
     1、javaBean 和 json 的互转
+    1、javaBean 和 list 的互转 gson.fromJson("xx",type) type 可以使用TypeToken的匿名内部内
+    1、javaBean 和 map  的互转
+
+
+五、什么是 AJAX 请求
+    AJAX 即“Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发 技术。
+    ajax 是一种浏览器通过 js 异步发起请求，局部更新页面的技术。
+    Ajax 请求的局部更新，浏览器地址栏不会发生变化 局部更新不会舍弃原来页面的内容
+
+    实例:
+    // 在这里使用 javaScript 语言发起 Ajax 请求，访问服务器 AjaxServlet 中 javaScriptAjax function ajaxRequest()
+
+    // 1、我们首先要创建
+       XMLHttpRequest var xmlhttprequest = new XMLHttpRequest();
+    // 2、调用 open 方法设置请求参数
+       xmlhttprequest.open("GET","http://localhost:8080/16_json_ajax_i18n/ajaxServlet?action=javaScriptAj ax",true)
+    // 4、在 send 方法前绑定 onreadystatechange 事件，处理请求完成后的操作。
+       xmlhttprequest.onreadystatechange = function()
+       { if (xmlhttprequest.readyState == 4 && xmlhttprequest.status == 200)
+       { var jsonObj = JSON.parse(xmlhttprequest.responseText);
+       // 把响应的数据显示在页面上 document.getElementById("div01").innerHTML = "编号：" + jsonObj.id + " , 姓名：" + jsonObj.name; } }
+    // 3、调用 send 方法发送请求 xmlhttprequest.send();
