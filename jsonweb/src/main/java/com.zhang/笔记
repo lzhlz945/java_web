@@ -95,3 +95,13 @@ $.get 方法和$.post 方法
       $.post("http://localhost:8080/16_json_ajax_i18n/ajaxServlet","action=jQueryPost",function (data)
       { $("#msg").html(" post 编号：" + data.id + " , 姓名：" + data.name);
       },"json");
+
+$.getJSON 方法
+          url 请求的 url 地址
+          data 发送给服务器的数据
+          callback 成功的回调函数
+     实例：
+        $.getJSON("http://localhost:8080/16_json_ajax_i18n/ajaxServlet","action=jQueryGetJSON",function (data)
+        {
+             $("#msg").html(" getJSON 编号：" + data.id + " , 姓名：" + data.name);
+        });
