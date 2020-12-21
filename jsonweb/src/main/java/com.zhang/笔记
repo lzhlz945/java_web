@@ -105,3 +105,14 @@ $.getJSON 方法
         {
              $("#msg").html(" getJSON 编号：" + data.id + " , 姓名：" + data.name);
         });
+
+
+表单序列化获取全部参数信息： "url"+$("#formBtn").serialize();
+
+    表单序列化 serialize() serialize()可以把表单中所有表单项的内容都获取到，并以 name=value&name=value 的形式进行拼接。
+     // ajax 请求
+     $("#submit").click(function(){
+     // 把参数序列化
+        $.getJSON("http://localhost:8080/16_json_ajax_i18n/ajaxServlet",
+        "action=jQuerySerialize&" + $("#form01").serialize(),
+        function (data) { $("#msg").html(" Serialize 编号：" + data.id + " , 姓名：" + data.name); }); });
