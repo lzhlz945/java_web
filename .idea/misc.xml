@@ -7,6 +7,7 @@
     <file type="web" url="file://$PROJECT_DIR$/cookie-session" />
     <file type="web" url="file://$PROJECT_DIR$/html-jQery" />
     <file type="web" url="file://$PROJECT_DIR$/html_js" />
+    <file type="web" url="file://$PROJECT_DIR$/jsonweb" />
     <file type="web" url="file://$PROJECT_DIR$/kpatch" />
     <file type="web" url="file://$PROJECT_DIR$/servlet_jsp" />
     <file type="web" url="file://$PROJECT_DIR$/threadLocal-0" />
@@ -32,6 +33,7 @@
         <option value="$PROJECT_DIR$/1-filter/pom.xml" />
         <option value="$PROJECT_DIR$/theadLocal01/pom.xml" />
         <option value="$PROJECT_DIR$/threadLocal-0/pom.xml" />
+        <option value="$PROJECT_DIR$/jsonweb/pom.xml" />
       </list>
     </option>
   </component>

@@ -4,3 +4,18 @@
      json 的支持（包括 C, C++, C#, Java, JavaScript, Perl, Python 等）。 这样就使得
      JSON 成为理想的数据交换格式。 json 是一种轻量级的数据交换格式。 轻量级指的是跟 xml
      做比较。 数据交换指的是客户端和服务器之间业务数据的传递格式。
+
+二、json 的定义 json 是由键值对组成，并且由花括号（大括号）包围。
+     每个键由引号引起来，键和值之间使用冒号进行分隔， 多组键值对之间进行逗号进行分隔。
+     json 定义示例：
+     var jsonObj = {
+                    "key1":12,
+                    "key2":"abc",
+                    "key3":true,
+                    "key4":[11,"arr",false],
+                    "key5":{ "key5_1" : 551,
+                             "key5_2" : "key5_2_value"
+                           },
+                    "key6":[{ "key6_1_1":6611, "key6_1_2":"key6_1_2_value"},
+                            {"key6_2_1":6621, "key6_2_2":"key6_2_2_value" }]
+                    };

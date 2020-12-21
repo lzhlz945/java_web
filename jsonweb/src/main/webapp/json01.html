@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+ <script>
+     window.onload=function () {
+
+         var jsonObj={
+                 "key1":"haha",
+                 "key2": 32,
+                 "key3":["1","sw","as"],
+                 "key4":[{"key40":"12s","key41":43},
+                         {"key42":"42key","key43":34 }
+                        ],
+                 "key5":{
+                         "key50":"hello","key51":52
+                        }
+                     }
+
+         alert(typeof jsonObj);
+         alert(jsonObj.key1);
+         alert(jsonObj.key5.key50);
+         for (var i = 0; i < jsonObj.key3.length; i++) {
+             alert(jsonObj.key3[i]);
+         }
+         alert(jsonObj.key4[0].key40);
+
+
+     }
+
+ </script>
+
+
+</body>
+</html>
