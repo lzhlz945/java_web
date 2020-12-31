@@ -36,4 +36,6 @@ public class UserServiceImpl implements UserService {
     public User registUser(User user) {
       return   userDao.registerUser(user);
     }
+
+
 }

@@ -14,6 +14,7 @@
       <module fileurl="file://$PROJECT_DIR$/servlet_jsp/servlet_jsp.iml" filepath="$PROJECT_DIR$/servlet_jsp/servlet_jsp.iml" />
       <module fileurl="file://$PROJECT_DIR$/threadLocal-0/threadLocal-0.iml" filepath="$PROJECT_DIR$/threadLocal-0/threadLocal-0.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-html-css/web-html-css.iml" filepath="$PROJECT_DIR$/web-html-css/web-html-css.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xml_笔记/xml_笔记.iml" filepath="$PROJECT_DIR$/xml_笔记/xml_笔记.iml" />
     </modules>
   </component>
 </project>

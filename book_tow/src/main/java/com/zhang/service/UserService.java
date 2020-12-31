@@ -18,4 +18,6 @@ public interface UserService {
 
     //注册
     User registUser(User user);
+
+
 }

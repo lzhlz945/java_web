@@ -8,7 +8,7 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>项目_二阶段 Maven Webapp</name>
+  <name>ssMaven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -123,5 +123,11 @@
       <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/kaptcha-2.3.2.jar</systemPath>
     </dependency>
 
+    <dependency>
+      <groupId>com.gson1</groupId>
+      <artifactId>goson1</artifactId>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/src/main/webapp/lib/gson-2.2.4.jar</systemPath>
+    </dependency>
   </dependencies>
 </project>
