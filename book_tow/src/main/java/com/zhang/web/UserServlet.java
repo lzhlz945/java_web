@@ -2,6 +2,7 @@ package com.zhang.web;
 
 
 
+import com.google.gson.Gson;
 import com.zhang.pojo.User;
 import com.zhang.service.UserService;
 import com.zhang.service.impl.UserServiceImpl;
@@ -12,6 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY;
 
@@ -119,6 +123,32 @@ public class UserServlet extends BaseServlet {
             System.out.println("验证码[" + code + "]错误");
             req.getRequestDispatcher("/pages/user/regist.jsp").forward(req, resp);
         }
+
+    }
+ /**
+     * 处理注册时验证用户名是否已经被注册的功能
+     *
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
+    protected void checkUserName(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        //  1、获取请求的参数
+        String username=req.getParameter("username");
+        HttpSession session = req.getSession();
+
+        Map<String,Object> map=new HashMap<>();
+
+        boolean flag=userService.existUserName(username);
+
+        map.put("mesg",flag);
+        Gson gson=new Gson();
+        String json = gson.toJson(map);
+//        resp.setContentType("application/json:charset=utf-8");
+        PrintWriter writer = resp.getWriter();
+        writer.print(json);
 
     }
 

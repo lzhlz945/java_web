@@ -1,7 +1,9 @@
 package com.zhang.service.impl;
 
 import com.zhang.dao.BookDao;
+import com.zhang.dao.OrderDao;
 import com.zhang.dao.impl.BookDaoImpl;
+import com.zhang.dao.impl.OrderDaoImpl;
 import com.zhang.pojo.Book;
 import com.zhang.pojo.Page;
 import com.zhang.service.BookService;
@@ -16,9 +18,12 @@ import java.util.List;
  */
 public class BookServiceImpl implements BookService {
     private BookDao bookDao=new BookDaoImpl();
+    private OrderDao orderDao=new OrderDaoImpl();
     @Override
     public void addBook(Book book) {
         bookDao.addBook(book);
+//     int a=10/0;
+        orderDao.addBookMsg(book);
     }
 
     @Override

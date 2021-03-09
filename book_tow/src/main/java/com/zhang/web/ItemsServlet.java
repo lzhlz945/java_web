@@ -46,4 +46,43 @@ public class ItemsServlet extends BaseServlet {
 
 
     }
+    protected void deleteItems(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
+        //获取Id查询商品信息
+        String id = req.getParameter("id");
+        HttpSession session = req.getSession();
+        Cart cart = (Cart) session.getAttribute("cart");
+        if(cart != null){
+
+        cart.deleteItems(Integer.valueOf(id));
+        System.out.println(req.getHeader("Referer"));
+        resp.sendRedirect(req.getHeader("Referer"));
+        }
+
+    }
+
+    protected void clearItems(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
+        //获取Id查询商品信息
+
+        HttpSession session = req.getSession();
+        Cart cart = (Cart) session.getAttribute("cart");
+        if(cart != null){
+        cart.emptyItems();
+        System.out.println(req.getHeader("Referer"));
+        resp.sendRedirect(req.getHeader("Referer"));
+        }
+
+    }
+    protected void updateCount(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
+        String id = req.getParameter("id");
+        String count = req.getParameter("count");
+
+        HttpSession session = req.getSession();
+        Cart cart = (Cart) session.getAttribute("cart");
+        if(cart != null){
+        cart.updateItemsCount(Integer.valueOf(id),Integer.valueOf(count));
+        System.out.println(req.getHeader("Referer"));
+        resp.sendRedirect(req.getHeader("Referer"));
+        }
+
+    }
 }

@@ -77,7 +77,7 @@ public class Cart {
     public BigDecimal totalPrice(){
         BigDecimal decimal = new BigDecimal(0);
         for (CartItem value : items.values()) {
-            decimal.add(value.getTotalPrice());
+            decimal=decimal.add(value.getTotalPrice());
         }
 
 

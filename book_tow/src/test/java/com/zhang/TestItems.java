@@ -31,7 +31,13 @@ public class TestItems {
     public void testAdd(){
 
         cart.addItems(  new CartItem(2,"vivo手机",1,new BigDecimal(4000),new BigDecimal(4000)));
+        cart.addItems(  new CartItem(3,"vivo手机",1,new BigDecimal(4000),new BigDecimal(4000)));
+        cart.addItems(  new CartItem(4,"vivo手机",1,new BigDecimal(4000),new BigDecimal(4000)));
 
+        Integer integer = cart.totalCount();
+        BigDecimal bigDecimal = cart.totalPrice();
+        System.out.println(bigDecimal);
+        System.out.println(integer);
         System.out.println(cart);
 
 

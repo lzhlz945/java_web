@@ -8,5 +8,17 @@ attr
    获取这个bookId
    $(this).attr("bookId");
 
+ThreadLocal 的使用 的使用
+ThreadLocal 的作用，它可以解决多线程的数据安全问题。
+ThreadLocal 它可以给当前线程关联一个数据（可以是普通变量，可以是对象，也可以是数组，集合）
+ThreadLocal 的特点：
+1、ThreadLocal 可以为当前线程关联一个数据。（它可以像 Map 一样存取数据，key 为当前线程）
+2、每一个 ThreadLocal 对象，只能为当前线程关联一个数据，如果要为当前线程关联多个数据，就需要使用多个
+ThreadLocal 对象实例。
+3、每个 ThreadLocal 对象实例定义的时候，一般都是 static 类型
+4、ThreadLocal 中保存数据，在线程销毁后。会由 JVM 虚拟自动释放。
 
-this 指当前标签对象
+
+
+//在修改threadLocal时 要判断 local.get()是否为空，防止空指针异常
+   添加tomact的事务控制，让所有的异常往外抛才可以

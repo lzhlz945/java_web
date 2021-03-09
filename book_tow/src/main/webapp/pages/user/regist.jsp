@@ -17,6 +17,31 @@
 				this.src="${bathPath}kaptcha.jpg?d="+new Date();
 
 			})
+			//用户名失去焦点
+			$("#username").blur(function () {
+				alert(123)
+			   $.ajax({
+				   url:"${bathPath}userServlet",
+				   data:{
+			   	    "action":"checkUserName",
+					"username":$("#username").val()
+				},
+				   type:"GET",
+				   dataType:"json",
+				   success:function (data) {
+				   	if(data.mesg){
+						$(".errorMsg").html("用户已存在！");
+                          return;
+					}else {
+						$(".errorMsg").html("可以注册该用户名");
+					}
+				   }
+
+
+
+			   })
+			})
+
 			//绑定注册按钮
 			$("#sub_btn").click(function () {
 

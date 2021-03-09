@@ -1,0 +1,118 @@
+一、什么是 JSON?
+     JSON (JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。
+     同时也易于机器解析和生成。JSON 采用完全独立于语言的文本格式，而且很多语言都提供了对
+     json 的支持（包括 C, C++, C#, Java, JavaScript, Perl, Python 等）。 这样就使得
+     JSON 成为理想的数据交换格式。 json 是一种轻量级的数据交换格式。 轻量级指的是跟 xml
+     做比较。 数据交换指的是客户端和服务器之间业务数据的传递格式。
+
+二、json 的定义 json 是由键值对组成，并且由花括号（大括号）包围。
+     每个键由引号引起来，键和值之间使用冒号进行分隔， 多组键值对之间进行逗号进行分隔。
+     json 定义示例：
+     var jsonObj = {
+                    "key1":12,
+                    "key2":"abc",
+                    "key3":true,
+                    "key4":[11,"arr",false],
+                    "key5":{ "key5_1" : 551,
+                             "key5_2" : "key5_2_value"
+                           },
+                    "key6":[{ "key6_1_1":6611, "key6_1_2":"key6_1_2_value"},
+                            {"key6_2_1":6621, "key6_2_2":"key6_2_2_value" }]
+                    };
+
+三、json转换成字符或者对象（前端）
+   json 的存在有两种形式。 一种是：对象的形式存在，我们叫它 json 对象。
+   一种是：字符串的形式存在，我们叫它 json 字符串。 一般我们要操作 json 中的数据的时候，需要 json 对象的格式。
+   一般我们要在客户端和服务器之间进行数据交换的时候，使用 json 字符串。
+   JSON.stringify() 把 json 对象转换成为 json 字符串 JSON.parse() 把 json 字符串转换成为 json 对象
+
+
+四、JSON 在 java 中的使用
+    1、javaBean 和 json 的互转
+    1、javaBean 和 list 的互转 gson.fromJson("xx",type) type 可以使用TypeToken的匿名内部内
+    1、javaBean 和 map  的互转
+
+
+五、什么是 AJAX 请求
+    AJAX 即“Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发 技术。
+    ajax 是一种浏览器通过 js 异步发起请求，局部更新页面的技术。
+    Ajax 请求的局部更新，浏览器地址栏不会发生变化 局部更新不会舍弃原来页面的内容
+
+    实例:
+    // 在这里使用 javaScript 语言发起 Ajax 请求，访问服务器 AjaxServlet 中 javaScriptAjax function ajaxRequest()
+
+    // 1、我们首先要创建
+       XMLHttpRequest var xmlhttprequest = new XMLHttpRequest();
+    // 2、调用 open 方法设置请求参数
+       xmlhttprequest.open("GET","http://localhost:8080/16_json_ajax_i18n/ajaxServlet?action=javaScriptAj ax",true)
+    // 4、在 send 方法前绑定 onreadystatechange 事件，处理请求完成后的操作。
+       xmlhttprequest.onreadystatechange = function()
+       { if (xmlhttprequest.readyState == 4 && xmlhttprequest.status == 200)
+       { var jsonObj = JSON.parse(xmlhttprequest.responseText);
+       // 把响应的数据显示在页面上 document.getElementById("div01").innerHTML = "编号：" + jsonObj.id + " , 姓名：" + jsonObj.name; } }
+    // 3、调用 send 方法发送请求 xmlhttprequest.send();
+
+
+
+$.ajax({}):
+     $.ajax 方法
+     url 表示请求的地址
+     type 表示请求的类型 GET 或 POST 请求
+     data 表示发送给服务器的数据 格式有两种： 一：name=value&name=value 二：{key:value}
+     success 请求成功，响应的回调函数
+     dataType 响应的数据类型 常用的数据类型有：
+              text 表示纯文本 xml 表示 xml 数据 json 表示 json 对象
+     实例：
+        $.ajax({
+           url:"xxx",
+           data:{
+              "a":xx,
+              "a0":xx
+           },
+           type:"post/get",
+           dataType:"json/xml/text",
+           success:function(data){
+             if(success){
+             data.xx
+             }
+           }
+        })
+
+$.get/pst
+
+$.get 方法和$.post 方法
+    url 请求的 url 地址
+    data 发送的数据
+    callback 成功的回调函数
+    type 返回的数据类型
+
+    $.get("url",data,function(data){},dataType);
+      $.get("http://localhost:8080/16_json_ajax_i18n/ajaxServlet","action=jQueryGet",function (data)
+      { $("#msg").html(" get 编号：" + data.id + " , 姓名：" + data.name); },
+      "json");
+
+    $.post("url",data,function(data){},dataType);
+      $.post("http://localhost:8080/16_json_ajax_i18n/ajaxServlet","action=jQueryPost",function (data)
+      { $("#msg").html(" post 编号：" + data.id + " , 姓名：" + data.name);
+      },"json");
+
+$.getJSON 方法
+          url 请求的 url 地址
+          data 发送给服务器的数据
+          callback 成功的回调函数
+     实例：
+        $.getJSON("http://localhost:8080/16_json_ajax_i18n/ajaxServlet","action=jQueryGetJSON",function (data)
+        {
+             $("#msg").html(" getJSON 编号：" + data.id + " , 姓名：" + data.name);
+        });
+
+
+表单序列化获取全部参数信息： "url"+$("#formBtn").serialize();
+
+    表单序列化 serialize() serialize()可以把表单中所有表单项的内容都获取到，并以 name=value&name=value 的形式进行拼接。
+     // ajax 请求
+     $("#submit").click(function(){
+     // 把参数序列化
+        $.getJSON("http://localhost:8080/16_json_ajax_i18n/ajaxServlet",
+        "action=jQuerySerialize&" + $("#form01").serialize(),
+        function (data) { $("#msg").html(" Serialize 编号：" + data.id + " , 姓名：" + data.name); }); });

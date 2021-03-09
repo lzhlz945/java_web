@@ -8,27 +8,38 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="001-servlet" />
+        <module name="1-filter" />
         <module name="book_tow" />
         <module name="cookie-session" />
         <module name="html-jQery" />
         <module name="html_js" />
         <module name="jquery-002" />
+        <module name="jsonweb" />
         <module name="kpatch" />
         <module name="servlet_jsp" />
+        <module name="theadLocal01" />
+        <module name="threadLocal-0" />
         <module name="web-html-css" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="001-filter" target="1.5" />
       <module name="001-servlet" target="1.8" />
+      <module name="1-filter" target="1.8" />
       <module name="book_tow" target="1.8" />
       <module name="cookie-session" target="1.8" />
+      <module name="filter-001" target="1.8" />
       <module name="html-jQery" target="1.8" />
       <module name="html_js" target="1.8" />
       <module name="jquery-002" target="1.8" />
+      <module name="jsonweb" target="1.8" />
       <module name="kpatch" target="1.8" />
       <module name="servlet_jsp" target="1.8" />
       <module name="test-maven" target="1.7" />
       <module name="testmaven" target="1.7" />
+      <module name="theadLocal-001" target="1.5" />
+      <module name="theadLocal01" target="1.5" />
+      <module name="threadLocal-0" target="1.7" />
       <module name="web-html-css" target="1.8" />
     </bytecodeTargetLevel>
   </component>

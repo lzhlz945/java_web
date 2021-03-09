@@ -19,33 +19,35 @@ import java.util.List;
  * @date:2020/12/3
  */
 public abstract class BaseDao {
+
     //使用DbUtils操作数据库
     private QueryRunner queryRunner = new QueryRunner();
     //update、delete、insert
-    public static void commonsUpdate(Connection con,String sql,Object ...args){
+    public  void commonsUpdate(String sql,Object ...args){
 
         PreparedStatement ps=null;
         try {
-            con = JdbcUtils.getConnection();
-            ps = con.prepareStatement(sql);
+            Connection connection = JdbcUtils.getConnection();
+
+            ps = connection.prepareStatement(sql);
             for (int i = 0; i < args.length; i++) {
                 ps.setObject(i+1,args[i]);
             }
             ps.execute();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtils.close(null,ps,con);
+            throw new RuntimeException(e);
         }
     }
 
     //select 多条数据
-    public <E> List<E> selectList(Connection con,String sql,Class<E> t,Object...args){
+    public <E> List<E> selectList(String sql,Class<E> t,Object...args){
         PreparedStatement ps =null;
         ResultSet rs =null;
         try {
             List<E> list=new ArrayList<>();
-            ps = con.prepareStatement(sql);
+            Connection connection = JdbcUtils.getConnection();
+            ps = connection.prepareStatement(sql);
             for (int i = 0; i < args.length; i++) {
                 ps.setObject(i+1,args[i]);
             }
@@ -64,22 +66,22 @@ public abstract class BaseDao {
                 list.add(e);
             }
 
+
             return list;
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtils.close(rs,ps,null);
+            throw new RuntimeException(e);
         }
-        return null;
-
     }
 
     //select 单条数据
-    public <E> E selectObject(Connection con,String sql,Class<E> t,Object...args){
+    public <E> E selectObject(String sql,Class<E> t,Object...args){
         PreparedStatement ps =null;
         ResultSet rs =null;
         try {
-            ps = con.prepareStatement(sql);
+            Connection connection = JdbcUtils.getConnection();
+
+            ps = connection.prepareStatement(sql);
             for (int i = 0; i < args.length; i++) {
                 ps.setObject(i+1,args[i]);
             }
@@ -100,19 +102,19 @@ public abstract class BaseDao {
 
         } catch (Exception ex) {
             ex.printStackTrace();
-        } finally {
-            JdbcUtils.close(rs,ps,null);
+            throw new RuntimeException(ex);
         }
         return null;
 
     }
 
     //返回特殊字段
-    public <E> E selectDiff(Connection con,String sql,Object...args){
+    public <E> E selectDiff(String sql,Object...args){
         PreparedStatement ps =null;
         ResultSet rs =null;
         try {
-            ps = con.prepareStatement(sql);
+            Connection connection = JdbcUtils.getConnection();
+            ps = connection.prepareStatement(sql);
             for (int i = 0; i < args.length; i++) {
                 ps.setObject(i+1,args[i]);
             }
@@ -125,10 +127,9 @@ public abstract class BaseDao {
 
 
 
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } finally {
-            JdbcUtils.close(rs,ps,null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return null;
 
@@ -149,10 +150,9 @@ public abstract class BaseDao {
             return queryRunner.query(conn, sql, new ScalarHandler(), args);
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            JdbcUtils.close(null,null,conn);
+            throw new RuntimeException(e);
         }
-        return null;
+
 
     }
 

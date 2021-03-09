@@ -2,6 +2,7 @@ package com.zhang.JdbcUtils;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
+import com.alibaba.druid.pool.DruidPooledConnection;
 
 
 import java.io.InputStream;
@@ -15,6 +16,7 @@ public class JdbcUtils {
 
     private static DruidDataSource dataSource;
 
+    private static ThreadLocal<Connection> con1=new ThreadLocal<Connection>();
     static {
         try {
             Properties properties = new Properties();
@@ -38,45 +40,66 @@ public class JdbcUtils {
      */
     public static Connection getConnection(){
 
-        Connection conn = null;
-
-        try {
-            conn = dataSource.getConnection();
-        } catch (Exception e) {
-            e.printStackTrace();
+        Connection conn = con1.get();
+        if(conn == null){
+            try {
+                 conn = dataSource.getConnection();
+                con1.set(conn);
+                conn.setAutoCommit(false); //设置为自动提交
+            } catch (SQLException e) {
+                e.printStackTrace();
+                throw new RuntimeException(e);
+            }
         }
-
         return conn;
     }
 
     /**
-     * 关闭连接，放回数据库连接池
-     * @param conn
+     * 提交事务并 ，关闭连接
+     * @param
      */
-    public static void close(ResultSet rs, PreparedStatement ps ,Connection conn) {
-        if (ps != null) {
-            try {
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        if (conn != null) {
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        if (rs != null) {
-            try {
-                rs.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+    public static void commitAndclose() {
 
+        Connection connection = con1.get();
+        if(connection != null) {
+            try {
+                connection.commit();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    throw new RuntimeException(e);
+                }
+            }
         }
+        // 一定要执行remove操作，否则就会出错。（因为Tomcat服务器底层使用了线程池技术）
+        con1.remove();
+    }
+    /**
+     * 回滚事务并 ，关闭连接
+     * @param
+     */
+    public static void rollbackAndclose() {
 
+        Connection connection = con1.get();
+        if (connection != null) { // 如果不等于null，说明 之前使用过连接，操作过数据库
+            try {
+                connection.rollback();//回滚事务
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    connection.close(); // 关闭连接，资源资源
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        // 一定要执行remove操作，否则就会出错。（因为Tomcat服务器底层使用了线程池技术）
+        con1.remove();
     }
 
 }

@@ -1,0 +1,58 @@
+一 、Filter 什么是过滤器
+    1、Filter 过滤器它是 JavaWeb 的三大组件之一。三大组件分别是：Servlet 程序、Listener 监听器、Filter 过滤器
+    2、Filter 过滤器它是 JavaEE 的规范。也就是接口
+    3、Filter 过滤器它的作用是： 拦截请求，过滤响应。
+    拦截请求常见的应用场景有：
+    1、权限检查
+    2、日记操作
+    3、事务管理
+    ……等等
+
+
+ else {
+// 让程序继续往下访问用户的目标资源
+filterChain.doFilter(servletRequest,servletResponse);
+}
+<filter-mapping>
+<!--filter-name 表示当前的拦截路径给哪个 filter 使用 -->
+<filter-name>AdminFilter</filter-name>
+<!--url-pattern 配置拦截路径
+/ 表示请求地址为： http://ip:port/ 工程路径 / 映射到 IDEA 的 web 目录
+/admin/* 表示请求地址为： http://ip:port/ 工程路径 /admin/*
+-->
+<url-pattern>/admin/*</url-pattern>
+</filter-mapping>
+
+二、Filter 的生命周期
+   Filter 的生命周期包含几个方法
+   1、构造器方法
+   2、init 初始化方法
+   第 1，2 步，在 web 工程启动的时候执行（Filter 已经创建）
+   3、doFilter 过滤方法
+   第 3 步，每次拦截到请求，就会执行
+   4、destroy 销毁
+   第 4 步，停止 web 工程的时候，就会执行（停止 web 工程，也会销毁 Filter 过滤器）
+
+三、FilterConfig 类
+  FilterConfig 类见名知义，它是 Filter 过滤器的配置文件类。
+  Tomcat 每次创建 Filter 的时候，也会同时创建一个 FilterConfig 类，这里包含了 Filter 配置文件的配置信息。
+  FilterConfig 类的作用是获取 filter 过滤器的配置内容
+  1、获取 Filter 的名称 filter-name 的内容
+  2、获取在 Filter 中配置的 init-param 初始化参数
+  3、获取 ServletContext 对象
+
+四、Filter 的拦截路径
+  --精确匹配 精确匹配
+  <url-pattern>/target.jsp</url-pattern>
+  以上配置的路径，表示请求地址必须为：http://ip:port/工程路径/target.jsp
+  --目录匹配 目录匹配
+  <url-pattern>/admin/*</url-pattern>
+  以上配置的路径，表示请求地址必须为：http://ip:port/工程路径/admin/*
+  --后缀名匹配 后缀名匹配
+  <url-pattern>*.html</url-pattern>
+  以上配置的路径，表示请求地址必须以.html 结尾才会拦截到
+  <url-pattern>*.do</url-pattern>
+  以上配置的路径，表示请求地址必须以.do 结尾才会拦截到
+  <url-pattern>*.action</url-pattern>
+  以上配置的路径，表示请求地址必须以.action 结尾才会拦截到
+  Filter 过滤器它只关心请求的地址是否匹配，不关心请求的资源是否存在！！！
